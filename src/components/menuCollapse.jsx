@@ -23,7 +23,6 @@ const MenuCollapse = ({ currentPage, links, renderLink, onSelect }) => {
           </li>
         ))}
       </Nav>
-      <br></br>
     </Navbar.Collapse>
   );
 };

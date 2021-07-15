@@ -5,7 +5,8 @@
   --secondary-color: black;
   --nav-bar-color: black;
   --muted-heading: #ffffff80;
-  --bottom-bar-height: 8.5vh
+  --bottom-bar-height: 8.5vh;
+  --menu-font-color: white;
 }
 
 body {

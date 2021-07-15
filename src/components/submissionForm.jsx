@@ -19,14 +19,14 @@ class SubmissionForm extends Form {
     errors: {},
   };
 
-  schema = Joi.object({
+  schema = {
     first: Joi.string().required().label("First"),
     last: Joi.string().required().label("Last"),
     number: Joi.label("Phone number"),
     email: Joi.string().email().required().label("Email"),
     rooms: Joi.number().integer().required().label("Number of rooms"),
     hallways: Joi.number().integer().required().label("Number of hallways"),
-  });
+  };
 
   inputs = [
     {
@@ -68,6 +68,8 @@ class SubmissionForm extends Form {
 
   doSubmit = () => {
     //Call server
+    window.open("mailto:m3schroder@gmail.com");
+
     console.log("Submitted");
   };
   render() {

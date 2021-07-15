@@ -30,6 +30,7 @@ class Form extends Component {
     return (
       <Input
         name={name}
+        className="form-input"
         value={value || ""}
         label={label}
         type={type}

@@ -28,6 +28,7 @@
 }
 .nav-collapse {
   justify-content: center;
+  height: auto;
 }
 .nav-menu li {
   padding: 7px;
@@ -41,7 +42,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 35px;
-  margin: auto;
   column-gap: 5px;
   grid-template-areas:
     "first last"
@@ -84,7 +84,6 @@
     bottom: 0 !important;
     opacity: 0.95;
     height: var(--bottom-bar-height);
-    padding-top: 1vh;
     width: 100vw;
   }
   .nav-collapse {
@@ -98,7 +97,6 @@
   }
 
   .nav-menu li {
-    margin: 2px;
     font-size: 16px;
   }
   #submissionPopup {
@@ -151,7 +149,7 @@
 /*Scales down the padding to fit text on smaller screens*/
 @media only screen and (max-width: 450px) {
   #submission-box {
-    padding: 15px;
+    padding: 15px 0 15px 0;
   }
 }
 
