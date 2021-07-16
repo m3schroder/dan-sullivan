@@ -1,20 +1,21 @@
 .nav-container {
-  opacity: 0.9;
   position: fixed !important;
   width: 100%;
   z-index: 3;
   justify-content: space-around;
-  background-color: var(--nav-bar-color);
+  align-content: center;
+  box-shadow: black;
+  background-color: var(--secondary-color);
   height: 6.5vh;
 }
 .nav-focus {
   position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
   opacity: 0.2;
-  height: 100%;
-  width: 100%;
-  opacity: 1;
   z-index: 2 !important;
-  background-color: transparent;
+  background-color: var(--secondary-color);
 }
 .navbar-toggler {
   border: 0px !important;
@@ -28,7 +29,6 @@
 }
 .nav-collapse {
   justify-content: center;
-  height: auto;
 }
 .nav-menu li {
   padding: 7px;
@@ -41,9 +41,10 @@
 #submission-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 35px;
+  padding: 0px 35px 35px 35px;
   column-gap: 5px;
   grid-template-areas:
+    "close-form close-form"
     "first last"
     "number email"
     "rooms hallways";
@@ -52,7 +53,15 @@
   color: white;
   text-align: left;
 }
-
+#close-form {
+  grid-area: close-form;
+  display: flex;
+  justify-content: flex-end;
+}
+#close-form button {
+  box-shadow: none !important;
+  color: var(--primary-color);
+}
 #first {
   grid-area: first;
 }
@@ -78,11 +87,11 @@
   padding: 6px;
   border-radius: 5px;
 }
+
 @media only screen and (max-width: 1350px) {
   .nav-container {
     position: fixed !important;
     bottom: 0 !important;
-    opacity: 0.95;
     height: var(--bottom-bar-height);
     width: 100vw;
   }
@@ -92,12 +101,15 @@
     background-color: var(--secondary-color);
     width: 100vw;
     border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid white;
     text-align: center;
   }
-
+  .nav-menu {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .nav-menu li {
     font-size: 16px;
+    color: var(--primary-color);
   }
   #submissionPopup {
     position: fixed !important;
@@ -106,7 +118,6 @@
     width: 100vw;
     border-radius: 10px 10px 0 0;
     text-align: center;
-    border-bottom: 1px solid white;
   }
   #submissionPopup h2 {
     margin: 3vh auto -2vh auto;
@@ -114,7 +125,10 @@
     font-size: 90%;
   }
   #submissionPopup label {
-    display: none;
+    display: none !important;
+  }
+  #submissionPopup:focus-within {
+    bottom: 0 !important;
   }
   .popup-content {
     display: flex;
@@ -149,7 +163,7 @@
 /*Scales down the padding to fit text on smaller screens*/
 @media only screen and (max-width: 450px) {
   #submission-box {
-    padding: 15px 0 15px 0;
+    padding: 20px;
   }
 }
 

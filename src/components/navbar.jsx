@@ -12,6 +12,7 @@ import "../assets/css/navbar.css";
 const NavBar = ({ links, logo, onSelect, currentPage }) => {
   const [openSubmission, setOpenSubmission] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [containerHidden, setContainerHidden] = useState(false);
 
   const toggleMenu = () => {
     if (openSubmission) {
@@ -37,6 +38,13 @@ const NavBar = ({ links, logo, onSelect, currentPage }) => {
     return link.content ? link.content : <strong>{link.text}</strong>;
   };
 
+  let containerStyle = {};
+  window.addEventListener("resize", (e) => {
+    setContainerHidden(!containerHidden);
+    containerStyle = containerHidden
+      ? { display: "none" }
+      : { display: "block" };
+  });
   return (
     <div className="nav-screen">
       {openMenu || openSubmission ? (
@@ -44,6 +52,7 @@ const NavBar = ({ links, logo, onSelect, currentPage }) => {
       ) : null}
       <Navbar
         onSelect={() => closeAll()}
+        style={containerStyle}
         className="navbar-dark nav-container"
         expand="xl"
         expanded={openMenu}

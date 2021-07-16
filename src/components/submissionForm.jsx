@@ -20,8 +20,8 @@ class SubmissionForm extends Form {
   };
 
   schema = {
-    first: Joi.string().required().label("First"),
-    last: Joi.string().required().label("Last"),
+    first: Joi.string().required().label("First name"),
+    last: Joi.string().required().label("Last name"),
     number: Joi.label("Phone number"),
     email: Joi.string().email().required().label("Email"),
     rooms: Joi.number().integer().required().label("Number of rooms"),
@@ -76,6 +76,11 @@ class SubmissionForm extends Form {
     const { open, popUpId, toggle } = this.props;
     return (
       <PopUp open={open} popUpId={popUpId}>
+        <div id="close-form">
+          <button onClick={toggle} className="btn">
+            X
+          </button>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div id="submission-box">
             {this.inputs.map(({ name, label, type, required }) => (

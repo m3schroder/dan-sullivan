@@ -2,11 +2,9 @@
 
 :root {
   --primary-color: white;
-  --secondary-color: black;
-  --nav-bar-color: black;
-  --muted-heading: #ffffff80;
-  --bottom-bar-height: 8.5vh;
-  --menu-font-color: white;
+  --secondary-color: #31393c;
+  --bottom-bar-height: 8vmax;
+  --menu-font-color: #ffffff80;
 }
 
 body {
@@ -28,6 +26,7 @@ code {
 * {
   -ms-overflow-style: none;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }

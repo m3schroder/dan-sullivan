@@ -1,6 +1,6 @@
 const vCardsJS = require("vcards-js");
 
-export function createContactCard() {
+export default function createContactCard() {
   var vCard = vCardsJS();
 
   //set properties
@@ -19,7 +19,6 @@ export function createContactCard() {
   vCard.note = "Notes on Eric";
 
   //save to file
-  vCard.saveToFile("./eric-nesser.vcf");
 
   //get as formatted string
   console.log(vCard.getFormattedString());

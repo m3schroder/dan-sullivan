@@ -7,6 +7,7 @@ import NotFound from "./pages/notFound";
 import logo from "./assets/images/logo-dan.png";
 
 import "./App.css";
+import createContactCard from "./utils/createContact";
 
 class App extends Component {
   state = {
@@ -28,6 +29,7 @@ class App extends Component {
       { path: "/commercial", text: "Commercial Carpets" }, // premade products
     ];
 
+    createContactCard();
     return (
       <>
         <NavBar
