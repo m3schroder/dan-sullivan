@@ -12,6 +12,7 @@ import "../assets/css/navbar.css";
 const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
   const [openSubmission, setOpenSubmission] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.screen.width);
 
   const toggleMenu = () => {
     if (openSubmission) {
@@ -50,6 +51,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
       >
         <SubmissionForm
           open={openSubmission}
+          errDropdown={windowWidth > 1350}
           toggle={toggleSubmission}
           popUpId="submissionPopup"
         />

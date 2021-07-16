@@ -73,7 +73,7 @@ class SubmissionForm extends Form {
     console.log("Submitted");
   };
   render() {
-    const { open, popUpId, toggle } = this.props;
+    const { open, popUpId, toggle, errDropdown } = this.props;
     return (
       <PopUp open={open} popUpId={popUpId}>
         <div id="close-form">
@@ -85,7 +85,7 @@ class SubmissionForm extends Form {
           <div id="submission-box">
             {this.inputs.map(({ name, label, type, required }) => (
               <div key={name}>
-                {this.renderInput(name, label, type, required)}
+                {this.renderInput(name, label, type, required, errDropdown)}
               </div>
             ))}
           </div>

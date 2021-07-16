@@ -22,7 +22,7 @@ class Form extends Component {
     );
   };
 
-  renderInput = (name, label, type = "text", required) => {
+  renderInput = (name, label, type = "text", required, errDropdown) => {
     const { data, errors } = this.state;
     // Checks for nested properties
     const value = name.includes(".") ? getNested(data, name) : data[name];
@@ -33,6 +33,7 @@ class Form extends Component {
         className="form-input"
         value={value || ""}
         label={label}
+        errDropdown={errDropdown}
         type={type}
         required={required}
         error={errors[name]}
