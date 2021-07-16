@@ -9,7 +9,7 @@
   height: 6.5vh;
 }
 .nav-focus {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 100vh;
   width: 100vw;
@@ -95,6 +95,9 @@
     height: var(--bottom-bar-height);
     width: 100vw;
   }
+  .hidden {
+    display: hidden;
+  }
   .nav-collapse {
     position: fixed !important;
     bottom: var(--bottom-bar-height) !important;
@@ -126,9 +129,6 @@
   }
   #submissionPopup label {
     display: none !important;
-  }
-  #submissionPopup:focus-within {
-    bottom: 0 !important;
   }
   .popup-content {
     display: flex;

@@ -12,6 +12,7 @@
     "jquery": "^3.6.0",
     "libphonenumber-js": "^1.9.22",
     "lodash": "^4.17.21",
+    "on-screen-keyboard-detector": "^2.2.0",
     "prop-types": "^15.7.2",
     "query-string": "^7.0.0",
     "react": "^17.0.2",

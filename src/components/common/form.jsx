@@ -65,6 +65,9 @@ class Form extends Component {
     this.setState({ errors: errors || {} });
     if (errors) return;
     this.setState({ data: {} });
+    // <div class="vcard">
+    //     <a class="url fn email org" href="YOUR vCARD URL">Add us to your contacts!</a>
+    // </div>
 
     console.log("Submitted");
   };
