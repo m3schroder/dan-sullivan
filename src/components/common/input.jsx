@@ -1,13 +1,13 @@
 import React from "react";
 
 const Input = ({ name, label, required, error, errDropdown, ...rest }) => {
-  let inputClass = "";
+  let inputClass = "form-control";
   if (errDropdown) {
     console.log("Working");
     if (!error) {
-      inputClass = "form-control";
+      inputClass = "";
     } else {
-      inputClass = "form-control alert-danger";
+      inputClass += "alert-danger";
       error = null;
     }
   }

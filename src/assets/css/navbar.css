@@ -8,6 +8,9 @@
   background-color: var(--secondary-color);
   height: 6.5vh;
 }
+.nav-collapse {
+  justify-content: center;
+}
 .nav-focus {
   position: fixed;
   top: 0;
@@ -28,8 +31,6 @@
   justify-content: center;
 }
 .nav-menu a {
-  width: 50%;
-  border: 2px solid white;
   border-radius: 5px;
 }
 .nav-menu li {
@@ -113,6 +114,9 @@
   .nav-menu strong {
     font-size: 18px;
   }
+  .nav-menu a {
+    width: 80%;
+  }
   #submissionPopup {
     position: fixed !important;
     bottom: var(--bottom-bar-height) !important;
@@ -167,6 +171,9 @@
 }
 
 @media only screen and (min-width: 1350px) {
+  .form-group label {
+    color: white;
+  }
   #submissionPopup {
     position: fixed !important;
     top: 40vh;
