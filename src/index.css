@@ -5,6 +5,8 @@
   --secondary-color: #31393c;
   --bottom-bar-height: 8vmax;
   --menu-font-color: #ffffff80;
+  --heading-color: black;
+  --text-color: black;
 }
 
 body {

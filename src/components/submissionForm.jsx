@@ -67,9 +67,6 @@ class SubmissionForm extends Form {
   ];
 
   doSubmit = () => {
-    //Call server
-    window.open("mailto:m3schroder@gmail.com");
-
     console.log("Submitted");
   };
   render() {

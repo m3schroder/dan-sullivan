@@ -23,18 +23,19 @@
 .nav-logo {
   height: 40px;
 }
-.nav-container a.nav-link {
-  margin: 0px;
-  padding: 0px;
-}
-.nav-collapse {
+.nav-item {
+  display: flex;
   justify-content: center;
 }
+.nav-menu a {
+  width: 50%;
+  border: 2px solid white;
+  border-radius: 5px;
+}
 .nav-menu li {
-  padding: 7px;
+  padding: 10px;
 }
 .nav-menu strong {
-  font-size: 100%;
   margin: 0 10px 0 10px;
 }
 
@@ -50,7 +51,6 @@
     "rooms hallways";
 
   font-size: 16px !important;
-  color: white;
   text-align: left;
 }
 #close-form {
@@ -110,9 +110,8 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .nav-menu li {
-    font-size: 16px;
-    color: var(--primary-color);
+  .nav-menu strong {
+    font-size: 18px;
   }
   #submissionPopup {
     position: fixed !important;

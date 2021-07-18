@@ -12,7 +12,7 @@ import "../assets/css/navbar.css";
 const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
   const [openSubmission, setOpenSubmission] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  const windowWidth = window.screen.width;
 
   const toggleMenu = () => {
     if (openSubmission) {
@@ -35,7 +35,8 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
     setOpenMenu(false);
   };
   const renderLink = (link) => {
-    return link.content ? link.content : <strong>{link.text}</strong>;
+    let rendered = link.content ? link.content : <strong>{link.text}</strong>;
+    return rendered;
   };
 
   return (

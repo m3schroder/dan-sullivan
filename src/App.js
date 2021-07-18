@@ -26,7 +26,10 @@ class App extends Component {
       { path: "/upholstery", text: "Upholstery Cleaning" }, // discuss with jd
       { path: "/tile", text: "Tile Cleaning" }, // premade products
       { path: "/stain", text: "Stain Removal" }, // premade products
-      { path: "/commercial", text: "Commercial Carpets" }, // premade products
+      {
+        path: "/commercial",
+        text: "Commercial Carpets",
+      }, // premade products
     ];
 
     createContactCard();
