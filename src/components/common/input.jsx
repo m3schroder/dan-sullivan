@@ -16,7 +16,6 @@ const Input = ({ name, label, required, error, errDropdown, ...rest }) => {
         className={inputClass}
         placeholder={label}
       ></input>
-      {errDropdown && <div className="alert-danger form-error">{error}</div>} }
     </div>
   );
 };
