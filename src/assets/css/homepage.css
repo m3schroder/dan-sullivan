@@ -1,9 +1,10 @@
 .home-container {
   display: grid;
-  padding: 5vw;
+  padding: 3vw;
   justify-items: center;
   align-items: center;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 .text-container {
@@ -14,12 +15,16 @@
 .text-container h1 {
   color: var(--heading-color);
   font-family: "Montserrat";
+  font-size: 1em;
+  font-weight: 600;
   margin-bottom: 15px;
-  text-align: center;
+  text-align: left;
 }
 .text-container p {
+  font-size: 0.8em;
   color: var(--text-color);
-  text-align: justify;
+  text-align: left;
+  line-height: 1.8em;
 }
 
 .image {

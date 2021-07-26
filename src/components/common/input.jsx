@@ -1,11 +1,8 @@
 import React from "react";
 
 const Input = ({ name, label, required, error, errDropdown, ...rest }) => {
-  let inputClass = "";
-  if (errDropdown && error) {
-    inputClass = "alert-danger";
-    error = null;
-  }
+  let inputClass = error ? "form-control alert-danger" : "form-control";
+
   return (
     <div className="form-group">
       <label htmlFor={name}>
@@ -16,10 +13,10 @@ const Input = ({ name, label, required, error, errDropdown, ...rest }) => {
         {...rest}
         name={name}
         id={name}
-        className={"form-control " + inputClass}
+        className={inputClass}
         placeholder={label}
       ></input>
-      {error && <div className="alert-danger form-error">{error}</div>}
+      {errDropdown && <div className="alert-danger form-error">{error}</div>} }
     </div>
   );
 };

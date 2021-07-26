@@ -50,6 +50,9 @@ code {
   flex-direction: column;
 }
 
+.line-break {
+  margin-top: 25px;
+}
 h4 {
   font-family: "Montserrat";
   color: var(--primary-color);

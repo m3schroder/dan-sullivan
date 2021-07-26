@@ -89,6 +89,19 @@
   border-radius: 5px;
 }
 
+.navbar-toggler {
+  display: none;
+}
+
+@media only screen and (min-width: 0) and (max-width: 1350px) {
+  .navbar-toggler {
+    display: block !important;
+  }
+  .navbar-expand-xl {
+    flex-flow: row;
+  }
+}
+
 @media only screen and (max-width: 1350px) {
   .nav-container {
     position: fixed !important;
@@ -96,6 +109,15 @@
     height: var(--bottom-bar-height);
     width: 100vw;
   }
+  /* Trying to fix navbar */
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .nav-collapse.show {
+    display: block !important;
+  }
+  .nav-
+  /*  */
   .hidden {
     display: hidden;
   }
@@ -152,7 +174,7 @@
 }
 
 /*Used for two columns in the awkward mobile transition phase*/
-@media only screen and (min-width: 650px) and (max-width: 1200px) {
+@media only screen and (min-width: 650px) and (max-width: 1350px) {
   .nav-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
