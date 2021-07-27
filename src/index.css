@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: white;
-  --secondary-color: #31393c;
+  --secondary-color: rgb(47, 81, 121);
   --bottom-bar-height: 8vmax;
   --menu-font-color: #ffffff80;
   --heading-color: black;
@@ -63,10 +63,34 @@ a {
 h3 {
   font-family: "Roboto", sans-serif;
 }
+
+.float-logo {
+  width: 8vmin;
+  background: var(--secondary-color);
+  border-radius: 4vmin;
+  margin: 10px;
+  padding: 5px;
+  position: fixed;
+  display: none;
+}
+
+.hide-mobile {
+  display: block !important;
+}
+.show-mobile {
+  display: none !important;
+}
+
 @media only screen and (max-width: 1350px) {
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
     z-index: 1;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: block !important;
   }
 }

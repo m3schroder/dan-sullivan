@@ -23,7 +23,7 @@
 .navbar-toggler {
   border: 0px !important;
 }
-.nav-logo {
+.nav-logo img {
   height: 40px;
 }
 .nav-item {
@@ -38,6 +38,11 @@
 }
 .nav-menu strong {
   margin: 0 10px 0 10px;
+}
+
+.phone-link {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #submission-box {
@@ -115,11 +120,6 @@
   }
   .nav-collapse.show {
     display: block !important;
-  }
-  .nav-
-  /*  */
-  .hidden {
-    display: hidden;
   }
   .nav-collapse {
     position: fixed !important;

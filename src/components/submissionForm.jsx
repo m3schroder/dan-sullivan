@@ -22,7 +22,10 @@ class SubmissionForm extends Form {
   schema = {
     first: Joi.string().required().label("First name"),
     last: Joi.string().required().label("Last name"),
-    number: Joi.label("Phone number"),
+    number: Joi.string()
+      .regex(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)
+      .required()
+      .label("Phone number"),
     email: Joi.string().email().required().label("Email"),
     rooms: Joi.number().integer().required().label("Number of rooms"),
     hallways: Joi.number().integer().required().label("Number of hallways"),
@@ -41,7 +44,7 @@ class SubmissionForm extends Form {
       name: "number",
       label: "Phone Number",
       type: "tel",
-      required: false,
+      required: true,
     },
     {
       id: "email",

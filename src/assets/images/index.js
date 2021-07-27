@@ -1,4 +1,2 @@
-export { default as aangh } from "./aang-horizontal.jpg";
-export { default as aangv } from "./aang-vertical.jpg";
-export { default as blacklogo } from "./blackLogo.png";
-export { default as whitelogo } from "./whiteLogo.png";
+export { default as splash } from "./carpet-cleaning-splash.png";
+export { default as logo } from "./logo-dan.png";

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
-import { CgMenuRound } from "react-icons/cg";
+import { CgMenuRound, CgPhone } from "react-icons/cg";
 
 import Collapse from "./menuCollapse";
 import SubmissionForm from "./submissionForm";
@@ -56,9 +56,6 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           toggle={toggleSubmission}
           popUpId="submissionPopup"
         />
-        <Navbar.Toggle onClick={() => toggleMenu()}>
-          <CgMenuRound color="white" size="40px" />
-        </Navbar.Toggle>
         <Nav.Link
           as={Link}
           eventKey={"Home"}
@@ -67,11 +64,18 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
             onSelect("Home");
             closeAll();
           }}
-          className="nav-link"
+          className="nav-logo hide-mobile"
           to={"/"}
         >
-          <img className="nav-logo" src={logo} alt="FutureSeed" />
+          <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
+        <a className="phone-link show-mobile" href="tel:6159056292">
+          <CgPhone color="white" size="40px" />
+        </a>
+        <Navbar.Toggle onClick={() => toggleMenu()}>
+          <CgMenuRound color="white" size="40px" />
+        </Navbar.Toggle>
+
         <Collapse
           currentPage={currentPage}
           onSelect={onSelect}

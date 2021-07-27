@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
-import logo from "./assets/images/logo-dan.png";
+import { logo } from "./assets/images/index";
 
 import "./App.css";
 import createContactCard from "./utils/createContact";

@@ -1,10 +1,8 @@
 .home-container {
   display: grid;
-  padding: 3vw;
+  padding: 5vh 20vw 0 20vw;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
 }
 
 .text-container {
@@ -33,10 +31,15 @@
   border: 2px solid black;
 }
 
+.home-splash {
+  width: 100%;
+  border-radius: 20px;
+}
+
 @media only screen and (max-width: 1350px) {
   /* Home */
   .home-container {
-    grid-template-columns: 1fr;
+    padding: 2vh 8vmin 0 8vmin;
   }
   .text-container p {
     font-size: 18px;
