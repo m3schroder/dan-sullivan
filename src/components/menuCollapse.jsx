@@ -15,7 +15,7 @@ const MenuCollapse = ({ currentPage, links, renderLink, onSelect }) => {
               id={link.id}
               eventKey={link.text}
               onClick={() => onSelect(link.text)}
-              style={link.style}
+              className={link.style}
               to={link.path}
             >
               {renderLink(link)}

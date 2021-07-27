@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: white;
-  --secondary-color: rgb(47, 81, 121);
+  --secondary-color: rgb(85, 85, 85);
   --bottom-bar-height: 8vmax;
   --menu-font-color: #ffffff80;
   --heading-color: rgb(46, 46, 46);
@@ -65,7 +65,7 @@ code {
 }
 
 .hide-mobile {
-  display: block !important;
+  display: flex !important;
 }
 .show-mobile {
   display: none !important;

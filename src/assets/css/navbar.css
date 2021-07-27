@@ -46,6 +46,9 @@
   padding-right: 5px;
 }
 
+#submissionPopup {
+  border-radius: 10px 10px;
+}
 #submission-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,7 +148,6 @@
     bottom: var(--bottom-bar-height) !important;
     background-color: var(--secondary-color);
     width: 100vw;
-    border-radius: 10px 10px;
     text-align: center;
     margin-bottom: 2px;
   }
@@ -185,6 +187,9 @@
     font-size: 16px !important;
     color: white;
   }
+  .home-option {
+    grid-area: home-option;
+  }
 }
 
 /*Scales down the padding to fit text on smaller screens*/
@@ -198,13 +203,15 @@
   .form-group label {
     color: white;
   }
+  .home-option {
+    display: none;
+  }
   #submissionPopup {
     position: fixed !important;
     top: 40vh;
     margin: auto;
     background-color: var(--secondary-color);
     width: 35vw;
-    border-radius: 5px;
     text-align: center;
   }
   #submissionPopup h2 {
