@@ -40,7 +40,6 @@ code {
 .clickable {
   cursor: pointer;
 }
-
 .center {
   display: flex;
   margin-top: 10%;
@@ -49,21 +48,9 @@ code {
   height: 200px;
   flex-direction: column;
 }
-
 .line-break {
   margin-top: 25px;
 }
-
-.float-logo {
-  width: 8vmin;
-  background: var(--secondary-color);
-  border-radius: 4vmin;
-  margin: 10px;
-  padding: 5px;
-  position: fixed;
-  display: none;
-}
-
 .hide-mobile {
   display: flex !important;
 }

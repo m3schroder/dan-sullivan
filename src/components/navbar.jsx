@@ -7,34 +7,49 @@ import { BiPhone } from "react-icons/bi";
 
 import Collapse from "./menuCollapse";
 import SubmissionForm from "./submissionForm";
+import PhonePopup from "./phonePopup";
 
 import "../assets/css/navbar.css";
 
 const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
   const [openSubmission, setOpenSubmission] = useState(false);
+  const [openPhone, setOpenPhone] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const windowWidth = window.screen.width;
   const iconColor = "white";
+  const anyOpen = openSubmission || openPhone || openMenu;
 
   const toggleMenu = () => {
-    if (openSubmission) {
+    if (openSubmission || openPhone) {
       setOpenSubmission(false);
+      setOpenPhone(false);
       setTimeout(() => setOpenMenu(true), 420);
     } else {
       setOpenMenu(!openMenu);
     }
   };
   const toggleSubmission = () => {
-    if (openMenu) {
+    if (openMenu || openPhone) {
       setOpenMenu(false);
+      setOpenPhone(false);
       setTimeout(() => setOpenSubmission(true), 420);
     } else {
       setOpenSubmission(!openSubmission);
     }
   };
+  const togglePhone = () => {
+    if (openMenu || openSubmission) {
+      setOpenSubmission(false);
+      setOpenMenu(false);
+      setTimeout(() => setOpenPhone(true), 420);
+    } else {
+      setOpenPhone(!openPhone);
+    }
+  };
   const closeAll = () => {
     setOpenSubmission(false);
     setOpenMenu(false);
+    setOpenPhone(false);
   };
   const renderLink = (link) => {
     let rendered = link.content ? link.content : <strong>{link.text}</strong>;
@@ -43,7 +58,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
 
   return (
     <div className="nav-screen">
-      {openMenu || openSubmission ? (
+      {anyOpen ? (
         <div className="nav-focus" onClick={() => closeAll()} />
       ) : null}
       <Navbar
@@ -52,6 +67,11 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         expand="xl"
         expanded={openMenu}
       >
+        <PhonePopup
+          open={openPhone}
+          toggle={togglePhone}
+          popUpId="phonePopup"
+        />
         <SubmissionForm
           open={openSubmission}
           errDropdown={windowWidth > 1350}
@@ -71,9 +91,12 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         >
           <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
-        <a className="phone-link show-mobile" href="tel:6159056292">
-          <BiPhone color={iconColor} size="40px" />
-        </a>
+        <BiPhone
+          className="show-mobile"
+          onClick={() => togglePhone()}
+          color={iconColor}
+          size="40px"
+        />
         <Navbar.Toggle onClick={() => toggleMenu()}>
           <CgMenuRound color={iconColor} size="40px" />
         </Navbar.Toggle>

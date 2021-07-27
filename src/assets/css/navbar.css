@@ -40,12 +40,10 @@
 .nav-menu strong {
   margin: 0 10px 0 10px;
 }
-
-.phone-link {
-  padding-left: 5px;
-  padding-right: 5px;
+#phonePopup {
+  border-radius: 10px 10px;
+  color: var(--primary-color);
 }
-
 #submissionPopup {
   border-radius: 10px 10px;
 }
@@ -71,6 +69,24 @@
 #close-form button {
   box-shadow: none !important;
   color: var(--primary-color);
+}
+#close-phone {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+#close-phone button {
+  box-shadow: none !important;
+  color: var(--primary-color);
+}
+#phone-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+#phone-box > .btn {
+  width: 30%;
+  font-size: 18px;
 }
 #first {
   grid-area: first;
@@ -142,6 +158,14 @@
   }
   .nav-menu a {
     width: 80%;
+  }
+  #phonePopup {
+    position: fixed !important;
+    bottom: var(--bottom-bar-height) !important;
+    background-color: var(--secondary-color);
+    width: 100vw;
+    text-align: center;
+    margin-bottom: 2px;
   }
   #submissionPopup {
     position: fixed !important;
