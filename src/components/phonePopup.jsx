@@ -6,7 +6,7 @@ import "../assets/css/navbar.css";
 
 const PhonePopup = ({ open, popUpId, toggle }) => {
   return (
-    <PopUp open={open} popUpId={popUpId}>
+    <PopUp open={open} className="show-mobile" popUpId={popUpId}>
       <div id="close-phone">
         <button onClick={toggle} className="btn">
           X

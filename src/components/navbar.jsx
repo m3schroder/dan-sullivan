@@ -12,44 +12,24 @@ import PhonePopup from "./phonePopup";
 import "../assets/css/navbar.css";
 
 const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
-  const [openSubmission, setOpenSubmission] = useState(false);
-  const [openPhone, setOpenPhone] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  //0 is phone  1 is menu   2 is the form
+  const [open, setOpen] = useState([false, false, false]);
   const windowWidth = window.screen.width;
   const iconColor = "white";
-  const anyOpen = openSubmission || openPhone || openMenu;
+  const anyOpen = open.some((x) => x === true);
 
-  const toggleMenu = () => {
-    if (openSubmission || openPhone) {
-      setOpenSubmission(false);
-      setOpenPhone(false);
-      setTimeout(() => setOpenMenu(true), 420);
-    } else {
-      setOpenMenu(!openMenu);
+  //Make toToggle an index 0-2
+  const toggle = (toToggle) => {
+    let temp = [false, false, false];
+    for (let x = 0; x < open.length; x++) {
+      if (x === toToggle) {
+        temp[x] = !open[x];
+      }
     }
-  };
-  const toggleSubmission = () => {
-    if (openMenu || openPhone) {
-      setOpenMenu(false);
-      setOpenPhone(false);
-      setTimeout(() => setOpenSubmission(true), 420);
-    } else {
-      setOpenSubmission(!openSubmission);
-    }
-  };
-  const togglePhone = () => {
-    if (openMenu || openSubmission) {
-      setOpenSubmission(false);
-      setOpenMenu(false);
-      setTimeout(() => setOpenPhone(true), 420);
-    } else {
-      setOpenPhone(!openPhone);
-    }
+    setOpen(temp);
   };
   const closeAll = () => {
-    setOpenSubmission(false);
-    setOpenMenu(false);
-    setOpenPhone(false);
+    setOpen([false, false, false]);
   };
   const renderLink = (link) => {
     let rendered = link.content ? link.content : <strong>{link.text}</strong>;
@@ -65,17 +45,13 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         onSelect={() => closeAll()}
         className="navbar-dark nav-container"
         expand="xl"
-        expanded={openMenu}
+        expanded={open[1]}
       >
-        <PhonePopup
-          open={openPhone}
-          toggle={togglePhone}
-          popUpId="phonePopup"
-        />
+        <PhonePopup open={open[0]} toggle={toggle} popUpId="phonePopup" />
         <SubmissionForm
-          open={openSubmission}
+          open={open[2]}
           errDropdown={windowWidth > 1350}
-          toggle={toggleSubmission}
+          toggle={toggle}
           popUpId="submissionPopup"
         />
         <Nav.Link
@@ -93,11 +69,11 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         </Nav.Link>
         <BiPhone
           className="show-mobile"
-          onClick={() => togglePhone()}
+          onClick={() => toggle(0)}
           color={iconColor}
           size="40px"
         />
-        <Navbar.Toggle onClick={() => toggleMenu()}>
+        <Navbar.Toggle onClick={() => toggle(1)}>
           <CgMenuRound color={iconColor} size="40px" />
         </Navbar.Toggle>
 
@@ -109,9 +85,9 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         />
         <button
           className="btn shadow-none"
-          onClick={() => toggleSubmission()}
+          onClick={() => toggle(2)}
           aria-controls="emailPopUp"
-          aria-expanded={openSubmission}
+          aria-expanded={open[2]}
         >
           <FiMail color={iconColor} size="40px" />
         </button>
