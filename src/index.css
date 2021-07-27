@@ -5,7 +5,7 @@
   --secondary-color: rgb(47, 81, 121);
   --bottom-bar-height: 8vmax;
   --menu-font-color: #ffffff80;
-  --heading-color: black;
+  --heading-color: rgb(46, 46, 46);
   --text-color: black;
 }
 
@@ -34,7 +34,7 @@ code {
 }
 
 .main-area {
-  padding: 70px 0px 30px 0px !important;
+  padding: 63px 0px 30px 0px !important;
 }
 
 .clickable {
@@ -52,16 +52,6 @@ code {
 
 .line-break {
   margin-top: 25px;
-}
-h4 {
-  font-family: "Montserrat";
-  color: var(--primary-color);
-}
-a {
-  font-family: "Montserrat";
-}
-h3 {
-  font-family: "Roboto", sans-serif;
 }
 
 .float-logo {

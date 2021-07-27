@@ -6,7 +6,7 @@ import "../assets/css/navbar.css";
 
 const MenuCollapse = ({ currentPage, links, renderLink, onSelect }) => {
   return (
-    <Navbar.Collapse className="nav-collapse">
+    <Navbar.Collapse className="nav-collapse popup-box">
       <Nav activeKey={currentPage} className="nav-menu">
         {links.map((link) => (
           <li key={link.path} className="nav-item">

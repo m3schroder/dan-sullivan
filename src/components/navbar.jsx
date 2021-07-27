@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
-import { CgMenuRound, CgPhone } from "react-icons/cg";
+import { CgMenuRound } from "react-icons/cg";
+import { BiPhone } from "react-icons/bi";
 
 import Collapse from "./menuCollapse";
 import SubmissionForm from "./submissionForm";
@@ -13,6 +14,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
   const [openSubmission, setOpenSubmission] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const windowWidth = window.screen.width;
+  const iconColor = "white";
 
   const toggleMenu = () => {
     if (openSubmission) {
@@ -70,10 +72,10 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
         <a className="phone-link show-mobile" href="tel:6159056292">
-          <CgPhone color="white" size="40px" />
+          <BiPhone color={iconColor} size="40px" />
         </a>
         <Navbar.Toggle onClick={() => toggleMenu()}>
-          <CgMenuRound color="white" size="40px" />
+          <CgMenuRound color={iconColor} size="40px" />
         </Navbar.Toggle>
 
         <Collapse
@@ -88,7 +90,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           aria-controls="emailPopUp"
           aria-expanded={openSubmission}
         >
-          <FiMail color="white" size="40px" />
+          <FiMail color={iconColor} size="40px" />
         </button>
       </Navbar>
     </div>
