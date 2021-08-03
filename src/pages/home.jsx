@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div className="home-splash hide-mobile">
+        <div className="home-splash hide-mobile hidden">
           Miraculous Carpet Cleaning
         </div>
         <div className="home-container">

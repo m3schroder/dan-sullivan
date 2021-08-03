@@ -5,6 +5,7 @@ import Form from "./common/form";
 import PopUp from "./common/popUp";
 
 import "../assets/css/navbar.css";
+import CloseButton from "./common/closeButton";
 
 class SubmissionForm extends Form {
   state = {
@@ -29,6 +30,7 @@ class SubmissionForm extends Form {
     email: Joi.string().email().required().label("Email"),
     rooms: Joi.number().integer().required().label("Number of rooms"),
     hallways: Joi.number().integer().required().label("Number of hallways"),
+    message: Joi.label("Message"),
   };
 
   inputs = [
@@ -67,6 +69,13 @@ class SubmissionForm extends Form {
       type: "number",
       required: true,
     },
+    {
+      id: "message",
+      name: "message",
+      label: "Message",
+      type: "string",
+      required: false,
+    },
   ];
 
   doSubmit = () => {
@@ -76,21 +85,19 @@ class SubmissionForm extends Form {
     const { open, popUpId, toggle, errDropdown } = this.props;
     return (
       <PopUp open={open} popUpId={popUpId}>
-        <div id="close-form">
-          <button onClick={toggle} className="btn">
-            X
-          </button>
+        <CloseButton onClose={toggle} />
+        <div style={{ padding: "5%" }}>
+          <form onSubmit={this.handleSubmit}>
+            <div id="submission-box">
+              {this.inputs.map(({ name, label, type, required }) => (
+                <div key={name} id={name}>
+                  {this.renderInput(name, label, type, required, errDropdown)}
+                </div>
+              ))}
+            </div>
+            {this.renderButton("Submit", toggle)}
+          </form>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <div id="submission-box">
-            {this.inputs.map(({ name, label, type, required }) => (
-              <div key={name}>
-                {this.renderInput(name, label, type, required, errDropdown)}
-              </div>
-            ))}
-          </div>
-          {this.renderButton("Submit", toggle)}
-        </form>
       </PopUp>
     );
   }

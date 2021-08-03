@@ -25,7 +25,10 @@
   border: 0px !important;
 }
 .nav-logo img {
-  height: 40px;
+  height: 45px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
 }
 .nav-item {
   display: flex;
@@ -43,6 +46,24 @@
 #phonePopup {
   border-radius: 10px 10px;
   color: var(--primary-color);
+  position: fixed !important;
+  bottom: var(--bottom-bar-height) !important;
+  background-color: var(--secondary-color);
+  width: 100vw;
+  text-align: center;
+  margin-bottom: 2px;
+}
+#phonePopup strong {
+  font-size: var(--nav-heading);
+}
+#phone-box {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+#phone-box > .btn {
+  width: 30vmin;
+  font-size: var(--nav-text);
 }
 #submissionPopup {
   border-radius: 10px 10px;
@@ -53,41 +74,15 @@
   padding: 0px 35px 35px 35px;
   column-gap: 5px;
   grid-template-areas:
-    "close-form close-form"
     "first last"
     "number email"
-    "rooms hallways";
+    "rooms hallways"
+    "message message";
 
-  font-size: 16px !important;
+  font-size: var(--nav-text) !important;
   text-align: left;
 }
-#close-form {
-  grid-area: close-form;
-  display: flex;
-  justify-content: flex-end;
-}
-#close-form button {
-  box-shadow: none !important;
-  color: var(--primary-color);
-}
-#close-phone {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-}
-#close-phone button {
-  box-shadow: none !important;
-  color: var(--primary-color);
-}
-#phone-box {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px;
-}
-#phone-box > .btn {
-  width: 30%;
-  font-size: 18px;
-}
+
 #first {
   grid-area: first;
 }
@@ -106,9 +101,12 @@
 #hallways {
   grid-area: hallways;
 }
+#message {
+  grid-area: message;
+}
 .form-submit-btn {
-  margin-bottom: 25px;
-  margin-top: -25px;
+  margin-top: -15px;
+  width: 30%;
 }
 .form-error {
   padding: 6px;
@@ -154,18 +152,10 @@
     padding-bottom: 15px;
   }
   .nav-menu strong {
-    font-size: 18px;
+    font-size: var(--nav-heading);
   }
   .nav-menu a {
     width: 80%;
-  }
-  #phonePopup {
-    position: fixed !important;
-    bottom: var(--bottom-bar-height) !important;
-    background-color: var(--secondary-color);
-    width: 100vw;
-    text-align: center;
-    margin-bottom: 2px;
   }
   #submissionPopup {
     position: fixed !important;
@@ -178,26 +168,10 @@
   #submissionPopup h2 {
     margin: 3vh auto -2vh auto;
     color: var(--muted-heading);
-    font-size: 90%;
+    font-size: var(--nav-text);
   }
   #submissionPopup label {
     display: none !important;
-  }
-  .popup-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px;
-  }
-  .popup-content strong {
-    font-size: 125%;
-    margin: 2vh auto 2vh auto;
-  }
-  .popup-content button {
-    padding: 15px 30px 5px 30px !important;
-    margin: 0 5vw 0 5vw;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
   }
 }
 
@@ -208,11 +182,7 @@
     grid-template-columns: 1fr 1fr;
     padding: 25px;
     column-gap: 5px;
-    font-size: 16px !important;
-    color: white;
-  }
-  .home-option {
-    grid-area: home-option;
+    font-size: var(--nav-heading) !important;
   }
 }
 
@@ -227,38 +197,15 @@
   .form-group label {
     color: white;
   }
-  .home-option {
-    display: none;
-  }
   #submissionPopup {
     position: fixed !important;
-    top: 40vh;
+    top: 25vh;
     margin: auto;
     background-color: var(--secondary-color);
     width: 35vw;
     text-align: center;
   }
-  #submissionPopup h2 {
-    margin: 3vh auto 1vh auto;
-    color: var(--muted-heading);
-    font-size: 90%;
-  }
   #submission-box ::placeholder {
-    color: transparent;
-  }
-  .popup-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 15px;
-    margin: 20px;
-  }
-  .popup-content strong {
-    font-size: 130%;
-  }
-  .popup-content button {
-    margin: 0 2vw 0 2vw;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    visibility: hidden !important;
   }
 }

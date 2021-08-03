@@ -38,6 +38,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
 
   return (
     <div className="nav-screen">
+      {/* Controls background used to close popups */}
       {anyOpen ? (
         <div className="nav-focus" onClick={() => closeAll()} />
       ) : null}
@@ -47,6 +48,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         expand="xl"
         expanded={open[1]}
       >
+        {/* Actual phone popup */}
         <PhonePopup open={open[0]} toggle={toggle} popUpId="phonePopup" />
         <SubmissionForm
           open={open[2]}
@@ -67,30 +69,32 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         >
           <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
+        {/* Toggle phone when visible */}
         <BiPhone
           className="show-mobile"
           onClick={() => toggle(0)}
           color={iconColor}
           size="40px"
         />
+        {/* Toggle Menu */}
         <Navbar.Toggle onClick={() => toggle(1)}>
           <CgMenuRound color={iconColor} size="40px" />
         </Navbar.Toggle>
-
         <Collapse
           currentPage={currentPage}
           onSelect={onSelect}
           links={links}
           renderLink={renderLink}
         />
-        <button
-          className="btn shadow-none"
+        {/* Toggle Form */}
+        <FiMail
+          color={iconColor}
+          size="40px"
+          className="shadow-none"
           onClick={() => toggle(2)}
           aria-controls="emailPopUp"
           aria-expanded={open[2]}
-        >
-          <FiMail color={iconColor} size="40px" />
-        </button>
+        />
       </Navbar>
     </div>
   );

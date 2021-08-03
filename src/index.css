@@ -7,6 +7,8 @@
   --menu-font-color: #ffffff80;
   --heading-color: rgb(46, 46, 46);
   --text-color: black;
+  --nav-text: 18px;
+  --nav-heading: 25px;
 }
 
 body {
@@ -34,7 +36,7 @@ code {
 }
 
 .main-area {
-  padding: 63px 0px 30px 0px !important;
+  padding: 62px 0px 30px 0px !important;
 }
 
 .clickable {
@@ -55,6 +57,14 @@ code {
   display: flex !important;
 }
 .show-mobile {
+  display: none !important;
+}
+.close-btn {
+  position: absolute;
+  padding: 10px;
+  right: 0;
+}
+.hidden {
   display: none !important;
 }
 

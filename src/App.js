@@ -30,7 +30,7 @@ class App extends Component {
         path: "/commercial",
         text: "Commercial Carpets",
       }, // premade products
-      { path: "/", text: "Home", style: "home-option" }, // premade products
+      { path: "/", text: "Home", style: "show-mobile" }, // premade products
     ];
 
     createContactCard();
