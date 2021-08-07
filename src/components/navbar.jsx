@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
-import { CgMenuRound } from "react-icons/cg";
 import { BiPhone } from "react-icons/bi";
 
 import Collapse from "./menuCollapse";
@@ -15,7 +14,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
   //0 is phone  1 is menu   2 is the form
   const [open, setOpen] = useState([false, false, false]);
   const windowWidth = window.screen.width;
-  const iconColor = "white";
+  const iconColor = "rgb(255, 255, 255, 0.8)";
   const anyOpen = open.some((x) => x === true);
 
   //Make toToggle an index 0-2
@@ -32,7 +31,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
     setOpen([false, false, false]);
   };
   const renderLink = (link) => {
-    let rendered = link.content ? link.content : <strong>{link.text}</strong>;
+    let rendered = link.content ? link.content : <p>{link.text}</p>;
     return rendered;
   };
 
@@ -77,8 +76,8 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           size="40px"
         />
         {/* Toggle Menu */}
-        <Navbar.Toggle onClick={() => toggle(1)}>
-          <CgMenuRound color={iconColor} size="40px" />
+        <Navbar.Toggle className="nav-logo" onClick={() => toggle(1)}>
+          <img src={logo} alt="awesome logo"></img>
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}
@@ -87,14 +86,16 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           renderLink={renderLink}
         />
         {/* Toggle Form */}
-        <FiMail
-          color={iconColor}
-          size="40px"
-          className="shadow-none"
-          onClick={() => toggle(2)}
-          aria-controls="emailPopUp"
-          aria-expanded={open[2]}
-        />
+        <div style={{ margin: "5px" }}>
+          <FiMail
+            color={iconColor}
+            size="40px"
+            className="shadow-none"
+            onClick={() => toggle(2)}
+            aria-controls="emailPopUp"
+            aria-expanded={open[2]}
+          />
+        </div>
       </Navbar>
     </div>
   );

@@ -2,13 +2,21 @@
 
 :root {
   --primary-color: white;
-  --secondary-color: rgb(85, 85, 85);
-  --bottom-bar-height: 8vmax;
-  --menu-font-color: #ffffff80;
-  --heading-color: rgb(46, 46, 46);
+  --secondary-color: #0d1b2a;
+
+  --nav-font: rgb(255, 255, 255, 0.8);
+  --heading-color: rgb(0, 0, 0, 0.8);
+  --banner-light: rgb(0, 0, 0, 0.8);
+  --banner-dark: rgb(255, 255, 255, 0.8);
+
   --text-color: black;
+  --bottom-bar-height: 8vmax;
   --nav-text: 18px;
-  --nav-heading: 25px;
+  --nav-heading: 1rem;
+
+  --shadow: 0px 0px 15px rgba(0, 0, 0, 0.226);
+  --shadow-top: 0px -1px 20px rgba(0, 0, 0, 0.226);
+  --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.226);
 }
 
 body {

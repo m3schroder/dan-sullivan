@@ -7,9 +7,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div className="home-splash hide-mobile hidden">
-          Miraculous Carpet Cleaning
-        </div>
+        <div id="home-banner">Miraculous Carpet Cleaning</div>
         <div className="home-container">
           <div className="text-container" id="one">
             <h1>Why Choose Our Carpet Cleaning Service?</h1>

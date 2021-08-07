@@ -6,7 +6,7 @@
   align-content: center;
   box-shadow: black;
   background-color: var(--secondary-color);
-  box-shadow: 0px 0px 2px var(--heading-color);
+  box-shadow: var(--shadow-bottom);
   height: 6.5vh;
 }
 .nav-collapse {
@@ -17,16 +17,15 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  opacity: 0.2;
   z-index: 2 !important;
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 0, 0, 0.336);
 }
 .navbar-toggler {
   border: 0px !important;
 }
 .nav-logo img {
-  height: 45px;
-  padding: 5px;
+  height: 2.5rem;
+  padding: 1px;
   background-color: white;
   border-radius: 50%;
 }
@@ -40,21 +39,25 @@
 .nav-menu li {
   padding: 10px;
 }
-.nav-menu strong {
+.nav-menu p {
   margin: 0 10px 0 10px;
 }
+.popup-box {
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 2px;
+}
 #phonePopup {
-  border-radius: 10px 10px;
-  color: var(--primary-color);
+  color: var(--nav-font);
   position: fixed !important;
   bottom: var(--bottom-bar-height) !important;
   background-color: var(--secondary-color);
+  box-shadow: var(--shadow-top);
   width: 100vw;
   text-align: center;
-  margin-bottom: 2px;
 }
-#phonePopup strong {
+#phonePopup p {
   font-size: var(--nav-heading);
+  color: var(--nav-font);
 }
 #phone-box {
   display: flex;
@@ -67,6 +70,7 @@
 }
 #submissionPopup {
   border-radius: 10px 10px;
+  box-shadow: var(--shadow);
 }
 #submission-box {
   display: grid;
@@ -76,8 +80,7 @@
   grid-template-areas:
     "first last"
     "number email"
-    "rooms hallways"
-    "message message";
+    "rooms hallways";
 
   font-size: var(--nav-text) !important;
   text-align: left;
@@ -101,8 +104,9 @@
 #hallways {
   grid-area: hallways;
 }
-#message {
-  grid-area: message;
+#submission-box label {
+  color: var(--nav-font);
+  font-weight: 500;
 }
 .form-submit-btn {
   margin-top: -15px;
@@ -116,16 +120,12 @@
   display: none;
 }
 @media only screen and (max-width: 1350px) {
-  .popup-box {
-    border-radius: 10px 10px;
-    margin-bottom: 2px;
-  }
   .nav-container {
     position: fixed !important;
     bottom: 0 !important;
     height: var(--bottom-bar-height);
     width: 100vw;
-    border-radius: 10px 10px 0 0;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.4);
   }
   /* Trying to fix navbar */
   .navbar-collapse.collapse {
@@ -138,6 +138,7 @@
     position: fixed !important;
     bottom: var(--bottom-bar-height) !important;
     background-color: var(--secondary-color);
+    box-shadow: var(--shadow-top);
     width: 100vw;
     text-align: center;
   }
@@ -151,9 +152,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .nav-menu strong {
-    font-size: var(--nav-heading);
-  }
   .nav-menu a {
     width: 80%;
   }
@@ -164,14 +162,24 @@
     width: 100vw;
     text-align: center;
     margin-bottom: 2px;
+    border-radius: 10px 10px 0 0 !important;
   }
-  #submissionPopup h2 {
-    margin: 3vh auto -2vh auto;
-    color: var(--muted-heading);
-    font-size: var(--nav-text);
+  #submissionPopup input {
+    font-size: 0.9rem;
   }
   #submissionPopup label {
     display: none !important;
+  }
+  #submission-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "first last"
+      "email email"
+      "number number"
+      "rooms hallways";
+    padding: 0px 0px 0px 0px;
+    column-gap: 5px;
   }
 }
 
@@ -182,7 +190,6 @@
     grid-template-columns: 1fr 1fr;
     padding: 25px;
     column-gap: 5px;
-    font-size: var(--nav-heading) !important;
   }
 }
 
@@ -195,7 +202,7 @@
 
 @media only screen and (min-width: 1350px) {
   .form-group label {
-    color: white;
+    color: var(--nav-font);
   }
   #submissionPopup {
     position: fixed !important;

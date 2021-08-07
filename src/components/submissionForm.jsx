@@ -1,21 +1,24 @@
 import React from "react";
 import Joi from "joi-browser";
+import emailjs from "emailjs-com";
+
+import CloseButton from "./common/closeButton";
+import PopUp from "./common/popUp";
 import Form from "./common/form";
 
-import PopUp from "./common/popUp";
+import createContactCard from "../utils/createContact";
 
 import "../assets/css/navbar.css";
-import CloseButton from "./common/closeButton";
 
 class SubmissionForm extends Form {
   state = {
     data: {
-      first: "",
-      last: "",
-      number: "",
-      email: "",
-      rooms: "",
-      hallways: "",
+      first: "Matt",
+      last: "Schroder",
+      number: "615-663-5650",
+      email: "m3schroder@gmail.com",
+      rooms: "2",
+      hallways: "3",
     },
     errors: {},
   };
@@ -58,36 +61,60 @@ class SubmissionForm extends Form {
     {
       id: "rooms",
       name: "rooms",
-      label: "# of rooms",
+      label: "Rooms",
       type: "number",
       required: true,
     },
     {
       id: "hallways",
       name: "hallways",
-      label: "# of hallways",
+      label: "Hallways",
       type: "number",
       required: true,
     },
-    {
-      id: "message",
-      name: "message",
-      label: "Message",
-      type: "string",
-      required: false,
-    },
   ];
 
-  doSubmit = () => {
-    console.log("Submitted");
+  doSubmit = (e) => {
+    e.preventDefault();
+    let { first, last, email, number, rooms, hallways } = e.target;
+    let contactCard = createContactCard(
+      first.value,
+      last.value,
+      email.value,
+      number.value
+    );
+    var base64 = btoa(contactCard);
+    emailjs
+      .send(
+        "service_8xdwyfp",
+        "template_3zgcky8",
+        {
+          first: first.value,
+          last: last.value,
+          rooms: rooms.value,
+          hallways: hallways.value,
+          email: email.value,
+          number: number.value,
+          content: base64,
+        },
+        "user_IW2ooKqhMLZoZM5ipPIyj"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   render() {
     const { open, popUpId, toggle, errDropdown } = this.props;
     return (
-      <PopUp open={open} popUpId={popUpId}>
+      <PopUp open={open} className="popup-box" id={popUpId}>
         <CloseButton onClose={toggle} />
         <div style={{ padding: "5%" }}>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.doSubmit}>
             <div id="submission-box">
               {this.inputs.map(({ name, label, type, required }) => (
                 <div key={name} id={name}>

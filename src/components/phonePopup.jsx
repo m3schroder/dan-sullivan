@@ -7,10 +7,10 @@ import "../assets/css/navbar.css";
 
 const PhonePopup = ({ open, popUpId, toggle }) => {
   return (
-    <PopUp open={open} className="show-mobile" popUpId={popUpId}>
+    <PopUp open={open} className="popup-box" id={popUpId}>
       <CloseButton onClose={toggle} />
       <div style={{ padding: "5%" }}>
-        <strong>Give us a call?</strong>
+        <p>Give us a call?</p>
         <div id="phone-box">
           <a className="btn btn-primary" href="tel:6159056292">
             Yes

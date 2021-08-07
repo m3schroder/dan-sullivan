@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/navbar";
+// import Splash from "./pages/splash";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import { logo } from "./assets/images/index";
 
 import "./App.css";
-import createContactCard from "./utils/createContact";
 
 class App extends Component {
   state = {
     currentPage: "Home",
+    splash: true,
   };
 
   handle = {
@@ -33,7 +34,6 @@ class App extends Component {
       { path: "/", text: "Home", style: "show-mobile" }, // premade products
     ];
 
-    createContactCard();
     return (
       <>
         <NavBar

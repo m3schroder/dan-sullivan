@@ -1,27 +1,13 @@
 const vCardsJS = require("vcards-js");
 
-export default function createContactCard() {
+export default function createContactCard(firstName, lastName, email, number) {
   var vCard = vCardsJS();
 
   //set properties
-  vCard.firstName = "Eric";
-  vCard.middleName = "J";
-  vCard.lastName = "Nesser";
-  vCard.organization = "ACME Corporation";
-  vCard.photo.attachFromUrl(
-    "https://avatars2.githubusercontent.com/u/5659221?v=3&s=460",
-    "JPEG"
-  );
-  vCard.workPhone = "312-555-1212";
-  vCard.birthday = new Date(1985, 0, 1);
-  vCard.title = "Software Developer";
-  vCard.url = "https://github.com/enesser";
-  vCard.note = "Notes on Eric";
+  vCard.firstName = firstName;
+  vCard.lastName = lastName;
+  vCard.email = email;
+  vCard.cellPhone = number;
 
-  //save to file
-
-  //get as formatted string
-  console.log(vCard.getFormattedString());
-
-  return;
+  return vCard.getFormattedString();
 }

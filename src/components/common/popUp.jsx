@@ -1,10 +1,12 @@
 import React from "react";
 import Collapse from "react-bootstrap/Collapse";
 
-const PopUp = ({ open, popUpId, children }) => {
+const PopUp = ({ open, className, id, children }) => {
   return (
     <Collapse in={open}>
-      <div id={popUpId}>{children}</div>
+      <div className={className} id={id}>
+        {children}
+      </div>
     </Collapse>
   );
 };
