@@ -13,12 +13,12 @@ import "../assets/css/navbar.css";
 class SubmissionForm extends Form {
   state = {
     data: {
-      first: "Matt",
-      last: "Schroder",
-      number: "615-663-5650",
-      email: "m3schroder@gmail.com",
-      rooms: "2",
-      hallways: "3",
+      first: "",
+      last: "",
+      number: "",
+      email: "",
+      rooms: "",
+      hallways: "",
     },
     errors: {},
   };
