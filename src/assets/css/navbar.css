@@ -7,7 +7,7 @@
   box-shadow: black;
   background-color: var(--secondary-color);
   box-shadow: var(--shadow-bottom);
-  height: 6.5vh;
+  height: 3rem;
 }
 .nav-collapse {
   justify-content: center;
@@ -24,7 +24,7 @@
   border: 0px !important;
 }
 .nav-logo img {
-  height: 2.5rem;
+  height: 2.2rem;
   padding: 1px;
   background-color: white;
   border-radius: 50%;

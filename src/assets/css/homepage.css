@@ -10,7 +10,9 @@
 }
 #home-banner {
   /* grid-area: banner; */
-  padding: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  width: 100vw;
   text-align: center;
   color: var(--banner-light);
   font-weight: 550;
@@ -74,7 +76,6 @@
 }
 
 @media only screen and (max-width: 1350px) {
-  /* Home */
   .home-container {
     padding: 2vh 3vw 0 3vw;
     margin-bottom: 5vh;
@@ -85,6 +86,8 @@
       "three";
   }
   #home-banner {
+    position: relative !important;
+    top: unset;
     font-size: 1.5rem;
     color: var(--banner-dark);
     background-color: var(--secondary-color);
