@@ -8,10 +8,7 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div id="home-banner">
-          <img src={logo} className="show-mobile" alt="awesome logo"></img>
-          Miraculous Carpet Cleaning
-        </div>
+        <div id="home-banner">Miraculous Carpet Cleaning</div>
         <div className="home-container">
           <div className="text-container" id="one">
             <h1>Why Choose Our Carpet Cleaning Service?</h1>

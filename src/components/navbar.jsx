@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
 import { CgMenuRound } from "react-icons/cg";
+import { IoMdClose } from "react-icons/io";
 import { BiPhone } from "react-icons/bi";
 import { logo } from "../assets/images/index";
 
@@ -15,10 +16,9 @@ import "../assets/css/navbar.css";
 const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
   //0 is phone  1 is menu   2 is the form
   const [open, setOpen] = useState([false, false, false]);
-  const windowWidth = window.screen.width;
+  const [fade, setFade] = useState("");
   const anyOpen = open.some((x) => x === true);
 
-  //Make toToggle an index 0-2
   const toggle = (toToggle) => {
     let temp = [false, false, false];
     for (let x = 0; x < open.length; x++) {
@@ -52,7 +52,6 @@ const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
         <PhonePopup open={open[0]} toggle={toggle} popUpId="phonePopup" />
         <SubmissionForm
           open={open[2]}
-          errDropdown={windowWidth > 1350}
           toggle={toggle}
           popUpId="submissionPopup"
         />
@@ -72,8 +71,21 @@ const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
         {/* Toggle phone when visible */}
         <BiPhone className="show-mobile icon" onClick={() => toggle(0)} />
         {/* Toggle Menu */}
-        <Navbar.Toggle className="nav-logo" onClick={() => toggle(1)}>
-          <CgMenuRound className="icon" />
+        <Navbar.Toggle
+          className="nav-logo"
+          onClick={() => {
+            setFade("fadeOut");
+            setTimeout(() => {
+              toggle(1);
+              setFade("fadeIn");
+            }, 80);
+          }}
+        >
+          {open[1] ? (
+            <IoMdClose className={fade + " icon"} />
+          ) : (
+            <CgMenuRound className={fade + " icon"} />
+          )}
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}

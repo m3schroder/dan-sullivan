@@ -10,13 +10,13 @@
   --banner-dark: rgb(255, 255, 255, 0.8);
 
   --text-color: black;
-  --bottom-bar-height: 8vmax;
+  --nav-bar-height: 7vmax;
   --nav-text: 18px;
   --nav-heading: 1rem;
 
   --shadow: 0px 0px 15px rgba(0, 0, 0, 0.226);
-  --shadow-top: 0px -1px 20px rgba(0, 0, 0, 0.226);
-  --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.226);
+  --shadow-top: 0px -10px 20px rgba(0, 0, 0, 0.2);
+  --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -76,6 +76,28 @@ code {
   display: none !important;
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  animation: fadeOut 0.08s ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeIn 0.1s ease-in;
+}
 @media only screen and (max-width: 1350px) {
   .main-area {
     padding: 0px 0px 70px 0px !important;
@@ -87,5 +109,15 @@ code {
   }
   .show-mobile {
     display: block !important;
+  }
+}
+@media only screen and (min-width: 650px) and (max-width: 1350px) {
+  :root {
+    --nav-bar-height: 4vmax;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  :root {
+    --nav-bar-height: 2vmax;
   }
 }

@@ -7,7 +7,7 @@
   box-shadow: black;
   background-color: var(--secondary-color);
   box-shadow: var(--shadow-bottom);
-  height: 3rem;
+  height: var(--nav-bar-height);
 }
 .nav-collapse {
   justify-content: center;
@@ -24,7 +24,8 @@
   border: 0px !important;
 }
 .nav-logo img {
-  height: 2.2rem;
+  height: calc(var(--nav-bar-height) * 0.7) !important;
+  width: calc(var(--nav-bar-height) * 0.7) !important;
   padding: 1px;
   background-color: white;
   border-radius: 50%;
@@ -33,49 +34,60 @@
   display: flex;
   justify-content: center;
 }
-.nav-menu a {
-  border-radius: 5px;
-}
 .nav-menu li {
   padding: 10px;
 }
-.nav-menu p {
+.nav-menu p,
+a {
+  font-size: var(--nav-text);
   margin: 0 10px 0 10px;
-}
-.icon {
-  color: var(--primary-color) !important;
-  height: 2.5rem !important;
-  width: 2.5rem !important;
-}
-.icon:hover {
-  color: rgb(255, 255, 255, 0.5) !important;
-}
-.icon:active {
-  color: rgb(255, 255, 255, 0.5) !important;
-  height: 2.7rem !important;
-  width: 2.7rem !important;
 }
 .dropdown {
   display: flex;
   align-items: center;
 }
-.dropdown [aria-expanded="true"] {
-  background-color: teal;
-}
 .dropdown-menu {
-  background-color: black !important;
+  background-color: var(--secondary-color);
+  position: relative;
+  top: calc(var(--nav-bar-height) + 9px);
+  border-radius: 0 0 10px 10px;
+  box-shadow: var(--shadow-bottom);
+  text-align: center;
+  width: 20vw;
+}
+.dropdown-menu a {
+  display: inline-flex;
+}
+.dropdown-menu a:hover::before {
+  content: "-";
+}
+.dropdown-menu a:hover::after {
+  content: "-";
 }
 .dropdown-toggle {
   margin-left: 0.4em;
 }
+.dropdown-toggle::after {
+  display: none;
+}
+.icon {
+  color: var(--primary-color) !important;
+  height: calc(var(--nav-bar-height) * 0.7) !important;
+  width: calc(var(--nav-bar-height) * 0.7) !important;
+}
+.icon:hover {
+  color: rgb(255, 255, 255, 0.8) !important;
+}
+.icon:active {
+  margin-bottom: 3px;
+}
 .popup-box {
   border-radius: 10px 10px 0 0 !important;
-  margin-bottom: 1px !important;
 }
 #phonePopup {
   color: var(--nav-font);
   position: fixed !important;
-  bottom: var(--bottom-bar-height) !important;
+  bottom: var(--nav-bar-height) !important;
   background-color: var(--secondary-color);
   box-shadow: var(--shadow-top);
   width: 100vw;
@@ -90,17 +102,18 @@
   justify-content: space-evenly;
   margin-top: 10px;
 }
+
 #phone-box > .btn {
   width: 30%;
   font-size: var(--nav-font);
 }
 #submissionPopup {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-top);
 }
 #submission-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0px 35px 35px 35px;
+  padding: 0px 20px 20px 20px;
   column-gap: 5px;
   grid-template-areas:
     "first last"
@@ -148,7 +161,7 @@
   .nav-container {
     position: fixed !important;
     bottom: 0 !important;
-    height: var(--bottom-bar-height);
+    height: var(--nav-bar-height);
     width: 100vw;
     box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.4);
   }
@@ -161,7 +174,7 @@
   }
   .nav-collapse {
     position: fixed !important;
-    bottom: var(--bottom-bar-height) !important;
+    bottom: var(--nav-bar-height) !important;
     background-color: var(--secondary-color);
     box-shadow: var(--shadow-top);
     width: 100vw;
@@ -180,13 +193,23 @@
   .nav-menu a {
     width: 80%;
   }
+  .dropdown {
+    display: flex;
+    justify-content: column;
+  }
+  .dropdown-menu {
+    background-color: var(--secondary-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow-bottom);
+    text-align: center;
+    width: 100vh !important;
+  }
   #submissionPopup {
     position: fixed !important;
-    bottom: var(--bottom-bar-height) !important;
+    bottom: var(--nav-bar-height) !important;
     background-color: var(--secondary-color);
     width: 100vw;
     text-align: center;
-    margin-bottom: 2px;
     border-radius: 10px 10px 0 0 !important;
   }
   #submissionPopup input {
@@ -203,7 +226,6 @@
       "email email"
       "number number"
       "rooms hallways";
-    padding: 0px 20px 0px 20px;
     column-gap: 5px;
   }
 }
@@ -243,5 +265,11 @@
   }
   #submission-box ::placeholder {
     visibility: hidden !important;
+  }
+  .popup-box {
+    border-radius: 10px 10px 10px 10px !important;
+  }
+  .icon {
+    margin: 10px;
   }
 }
