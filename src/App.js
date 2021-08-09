@@ -5,7 +5,6 @@ import NavBar from "./components/navbar";
 // import Splash from "./pages/splash";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
-import { logo } from "./assets/images/index";
 
 import "./App.css";
 
@@ -22,23 +21,25 @@ class App extends Component {
   };
   render() {
     const links = [
-      { path: "/carpet", text: "Carpet Cleaning" }, // premade products
-      { path: "/rug", text: "Area Rug Cleaning" }, // design, paint, print
-      { path: "/upholstery", text: "Upholstery Cleaning" }, // discuss with jd
-      { path: "/tile", text: "Tile Cleaning" }, // premade products
-      { path: "/stain", text: "Stain Removal" }, // premade products
+      { path: "/", text: "Home", style: "show-mobile" }, // premade products
+      { path: "/about", text: "About Us" },
+      { path: "/gallery", text: "Gallery" },
+      { path: "/carpet", text: "Carpet Cleaning", service: true }, // premade products
+      { path: "/rug", text: "Area Rug Cleaning", service: true }, // design, paint, print
+      { path: "/upholstery", text: "Upholstery Cleaning", service: true }, // discuss with jd
+      { path: "/tile", text: "Tile Cleaning", service: true }, // premade products
+      { path: "/stain", text: "Stain Removal", service: true }, // premade products
       {
         path: "/commercial",
         text: "Commercial Carpets",
+        service: true,
       }, // premade products
-      { path: "/", text: "Home", style: "show-mobile" }, // premade products
     ];
 
     return (
       <>
         <NavBar
           links={links}
-          logo={logo}
           onSelect={this.handle.pageChange}
           currentPage={this.state.currentPage}
         />

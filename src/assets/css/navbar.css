@@ -42,9 +42,35 @@
 .nav-menu p {
   margin: 0 10px 0 10px;
 }
+.icon {
+  color: var(--primary-color) !important;
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+}
+.icon:hover {
+  color: rgb(255, 255, 255, 0.5) !important;
+}
+.icon:active {
+  color: rgb(255, 255, 255, 0.5) !important;
+  height: 2.7rem !important;
+  width: 2.7rem !important;
+}
+.dropdown {
+  display: flex;
+  align-items: center;
+}
+.dropdown [aria-expanded="true"] {
+  background-color: teal;
+}
+.dropdown-menu {
+  background-color: black !important;
+}
+.dropdown-toggle {
+  margin-left: 0.4em;
+}
 .popup-box {
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 2px;
+  border-radius: 10px 10px 0 0 !important;
+  margin-bottom: 1px !important;
 }
 #phonePopup {
   color: var(--nav-font);
@@ -65,11 +91,10 @@
   margin-top: 10px;
 }
 #phone-box > .btn {
-  width: 30vmin;
-  font-size: var(--nav-text);
+  width: 30%;
+  font-size: var(--nav-font);
 }
 #submissionPopup {
-  border-radius: 10px 10px;
   box-shadow: var(--shadow);
 }
 #submission-box {
@@ -82,7 +107,7 @@
     "number email"
     "rooms hallways";
 
-  font-size: var(--nav-text) !important;
+  font-size: var(--nav-font) !important;
   text-align: left;
 }
 
@@ -109,8 +134,8 @@
   font-weight: 500;
 }
 .form-submit-btn {
-  margin-top: -15px;
   width: 30%;
+  font-size: var(--nav-font);
 }
 .form-error {
   padding: 6px;
@@ -178,7 +203,7 @@
       "email email"
       "number number"
       "rooms hallways";
-    padding: 0px 0px 0px 0px;
+    padding: 0px 20px 0px 20px;
     column-gap: 5px;
   }
 }
@@ -188,6 +213,10 @@
   .nav-menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "first last"
+      "email number"
+      "rooms hallways" !important;
     padding: 25px;
     column-gap: 5px;
   }

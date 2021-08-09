@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
+import { CgMenuRound } from "react-icons/cg";
 import { BiPhone } from "react-icons/bi";
+import { logo } from "../assets/images/index";
 
 import Collapse from "./menuCollapse";
 import SubmissionForm from "./submissionForm";
@@ -10,11 +12,10 @@ import PhonePopup from "./phonePopup";
 
 import "../assets/css/navbar.css";
 
-const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
+const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
   //0 is phone  1 is menu   2 is the form
   const [open, setOpen] = useState([false, false, false]);
   const windowWidth = window.screen.width;
-  const iconColor = "rgb(255, 255, 255, 0.8)";
   const anyOpen = open.some((x) => x === true);
 
   //Make toToggle an index 0-2
@@ -69,15 +70,10 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
           <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
         {/* Toggle phone when visible */}
-        <BiPhone
-          className="show-mobile"
-          onClick={() => toggle(0)}
-          color={iconColor}
-          size="40px"
-        />
+        <BiPhone className="show-mobile icon" onClick={() => toggle(0)} />
         {/* Toggle Menu */}
         <Navbar.Toggle className="nav-logo" onClick={() => toggle(1)}>
-          <img src={logo} alt="awesome logo"></img>
+          <CgMenuRound className="icon" />
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}
@@ -88,9 +84,7 @@ const NavBar = ({ links, logo, onSelect, currentPage, style = {} }) => {
         {/* Toggle Form */}
         <div style={{ margin: "5px" }}>
           <FiMail
-            color={iconColor}
-            size="40px"
-            className="shadow-none"
+            className="icon shadow-none"
             onClick={() => toggle(2)}
             aria-controls="emailPopUp"
             aria-expanded={open[2]}
