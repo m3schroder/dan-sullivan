@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
+@import "./assets/css/animation.css";
 
 :root {
   --primary-color: white;
@@ -62,7 +63,7 @@ code {
   margin-top: 25px;
 }
 .hide-mobile {
-  display: flex !important;
+  display: block !important;
 }
 .show-mobile {
   display: none !important;
@@ -75,29 +76,10 @@ code {
 .hidden {
   display: none !important;
 }
+.shown {
+  display: block !important;
+}
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.fadeOut {
-  animation: fadeOut 0.08s ease-out;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.fadeIn {
-  animation: fadeIn 0.1s ease-in;
-}
 @media only screen and (max-width: 1350px) {
   .main-area {
     padding: 0px 0px 70px 0px !important;
@@ -113,11 +95,11 @@ code {
 }
 @media only screen and (min-width: 650px) and (max-width: 1350px) {
   :root {
-    --nav-bar-height: 4vmax;
+    --nav-bar-height: 4.2vmax;
   }
 }
 @media only screen and (min-width: 1350px) {
   :root {
-    --nav-bar-height: 2vmax;
+    --nav-bar-height: 2.5vmax;
   }
 }

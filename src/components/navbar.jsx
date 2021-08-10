@@ -13,7 +13,14 @@ import PhonePopup from "./phonePopup";
 
 import "../assets/css/navbar.css";
 
-const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
+const NavBar = ({
+  links,
+  onSelect,
+  submenu,
+  toggleSubmenu,
+  currentPage,
+  style = {},
+}) => {
   //0 is phone  1 is menu   2 is the form
   const [open, setOpen] = useState([false, false, false]);
   const [fade, setFade] = useState("");
@@ -89,6 +96,8 @@ const NavBar = ({ links, onSelect, currentPage, style = {} }) => {
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}
+          submenu={submenu}
+          toggleSubmenu={toggleSubmenu}
           onSelect={onSelect}
           links={links}
           renderLink={renderLink}

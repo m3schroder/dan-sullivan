@@ -1,0 +1,72 @@
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0vw;
+  }
+}
+@keyframes slideRight {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: 20px;
+    opacity: 0;
+  }
+}
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30vh;
+  }
+}
+@keyframes slideUp {
+  from {
+    height: 30vh;
+  }
+  to {
+    height: 0;
+  }
+}
+@media only screen and (max-width: 1350px) {
+  .slideUp {
+    animation: slideUp 0.5s backwards;
+    height: 30vh;
+  }
+  .slideDown {
+    animation: slideDown 0.5s backwards;
+    height: 0;
+  }
+  .subSlideLeft > div {
+    animation: slideLeft 0.5s backwards;
+  }
+  .slideRight {
+    animation: slideRight 0.5s backwards;
+  }
+  .fadeOut {
+    animation: fadeOut 0.08s ease-out;
+  }
+  .fadeIn {
+    animation: fadeIn 0.1s ease-in;
+  }
+}

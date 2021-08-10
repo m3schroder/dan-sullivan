@@ -4,23 +4,31 @@ import { Link } from "react-router-dom";
 
 import "../assets/css/navbar.css";
 
-const MenuCollapse = ({ currentPage, links, renderLink, onSelect }) => {
-  let services = [];
+const MenuCollapse = ({
+  currentPage,
+  submenu,
+  toggleSubmenu,
+  links,
+  renderLink,
+  onSelect,
+}) => {
+  let subMenuClass = submenu ? "subSlideLeft" : "";
+  let submenuItems = [];
   return (
     <Navbar.Collapse className="nav-collapse popup-box">
       <Nav activeKey={currentPage} className="nav-menu">
         {links.map((link) => {
-          if (link.service) {
-            services.push(link);
+          if (link.submenu) {
+            submenuItems.push(link);
             return null;
           } else {
             return (
-              <li key={link.path} className="nav-item">
+              <li key={link.text} className="nav-item">
                 <Nav.Link
                   as={Link}
                   id={link.id}
-                  eventKey={link.text}
-                  onClick={() => onSelect(link.text)}
+                  eventKey={link.path}
+                  onClick={() => onSelect(link.path)}
                   className={link.style}
                   to={link.path}
                 >
@@ -30,18 +38,22 @@ const MenuCollapse = ({ currentPage, links, renderLink, onSelect }) => {
             );
           }
         })}
-        <NavDropdown title="Services">
-          {services.map((service) => (
-            <li key={service.path} className="nav-item">
+        <NavDropdown
+          className={subMenuClass}
+          onClick={() => toggleSubmenu()}
+          title="Services"
+        >
+          {submenuItems.map((subitem) => (
+            <li key={subitem.text}>
               <Nav.Link
                 as={Link}
-                id={service.id}
-                eventKey={service.text}
-                onClick={() => onSelect(service.text)}
-                className={service.style}
-                to={service.path}
+                id={subitem.id}
+                eventKey={subitem.path}
+                onClick={() => onSelect(subitem.path)}
+                className={subitem.style}
+                to={subitem.path}
               >
-                {renderLink(service)}
+                {renderLink(subitem)}
               </Nav.Link>
             </li>
           ))}

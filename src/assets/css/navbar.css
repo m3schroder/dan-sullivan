@@ -9,9 +9,6 @@
   box-shadow: var(--shadow-bottom);
   height: var(--nav-bar-height);
 }
-.nav-collapse {
-  justify-content: center;
-}
 .nav-focus {
   position: fixed;
   top: 0;
@@ -31,8 +28,7 @@
   border-radius: 50%;
 }
 .nav-item {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 .nav-menu li {
   padding: 10px;
@@ -42,31 +38,15 @@ a {
   font-size: var(--nav-text);
   margin: 0 10px 0 10px;
 }
-.dropdown {
-  display: flex;
-  align-items: center;
-}
 .dropdown-menu {
   background-color: var(--secondary-color);
-  position: relative;
-  top: calc(var(--nav-bar-height) + 9px);
-  border-radius: 0 0 10px 10px;
-  box-shadow: var(--shadow-bottom);
-  text-align: center;
-  width: 20vw;
+  box-shadow: var(--shadow);
+  width: 15vw;
 }
 .dropdown-menu a {
   display: inline-flex;
 }
-.dropdown-menu a:hover::before {
-  content: "-";
-}
-.dropdown-menu a:hover::after {
-  content: "-";
-}
-.dropdown-toggle {
-  margin-left: 0.4em;
-}
+
 .dropdown-toggle::after {
   display: none;
 }
@@ -186,23 +166,21 @@ a {
   .navbar-expand-xl {
     flex-flow: row;
   }
-  .nav-menu {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  .nav-menu a {
-    width: 80%;
-  }
-  .dropdown {
-    display: flex;
-    justify-content: column;
+  .dropdown-menu.show {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
   }
   .dropdown-menu {
-    background-color: var(--secondary-color);
-    border-radius: 0 0 10px 10px;
-    box-shadow: var(--shadow-bottom);
-    text-align: center;
-    width: 100vh !important;
+    width: 100vw;
+  }
+  .dropdown-menu li {
+    max-height: 5vh;
+  }
+  .dropdown-menu p {
+    font-size: 0.65em;
   }
   #submissionPopup {
     position: fixed !important;
@@ -254,6 +232,21 @@ a {
 @media only screen and (min-width: 1350px) {
   .form-group label {
     color: var(--nav-font);
+  }
+  .nav-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dropdown {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-menu a:hover::before {
+    content: "-";
+  }
+  .dropdown-menu a:hover::after {
+    content: "-";
   }
   #submissionPopup {
     position: fixed !important;

@@ -2,45 +2,50 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavBar from "./components/navbar";
-// import Splash from "./pages/splash";
-import Home from "./pages/home";
 import NotFound from "./pages/notFound";
-
+import Home from "./pages/home";
 import "./App.css";
 
 class App extends Component {
   state = {
     currentPage: "Home",
+    submenu: false,
     splash: true,
   };
 
   handle = {
-    pageChange: (page) => {
-      this.setState({ currentPage: page });
+    onSelect: (path) => {
+      this.setState({ currentPage: path });
+    },
+    toggleSubmenu: () => {
+      this.setState({ submenu: !this.state.submenu });
     },
   };
+
   render() {
     const links = [
-      { path: "/", text: "Home", style: "show-mobile" }, // premade products
+      { path: "/", text: "Home" },
       { path: "/about", text: "About Us" },
       { path: "/gallery", text: "Gallery" },
-      { path: "/carpet", text: "Carpet Cleaning", service: true }, // premade products
-      { path: "/rug", text: "Area Rug Cleaning", service: true }, // design, paint, print
-      { path: "/upholstery", text: "Upholstery Cleaning", service: true }, // discuss with jd
-      { path: "/tile", text: "Tile Cleaning", service: true }, // premade products
-      { path: "/stain", text: "Stain Removal", service: true }, // premade products
+      { path: "/carpet", text: "Carpet Cleaning", submenu: true },
+      { path: "/rug", text: "Area Rug Cleaning", submenu: true },
+      { path: "/upholstery", text: "Upholstery Cleaning", submenu: true },
+      { path: "/tile", text: "Tile Cleaning", submenu: true },
+      { path: "/stain", text: "Stain Removal", submenu: true },
       {
         path: "/commercial",
         text: "Commercial Carpets",
-        service: true,
-      }, // premade products
+        submenu: true,
+      },
     ];
 
     return (
       <>
         <NavBar
           links={links}
-          onSelect={this.handle.pageChange}
+          onSelect={this.handle.onSelect}
+          submenu={this.state.submenu}
+          toggleSubmenu={this.handle.toggleSubmenu}
           currentPage={this.state.currentPage}
         />
         <main className="container-fluid main-area">
