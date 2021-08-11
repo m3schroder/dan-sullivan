@@ -61,14 +61,14 @@ class SubmissionForm extends Form {
     {
       id: "rooms",
       name: "rooms",
-      label: "Rooms",
+      label: "# Rooms",
       type: "number",
       required: true,
     },
     {
       id: "hallways",
       name: "hallways",
-      label: "Hallways",
+      label: "# Hallways",
       type: "number",
       required: true,
     },

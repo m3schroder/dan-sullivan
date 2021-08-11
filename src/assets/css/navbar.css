@@ -27,18 +27,7 @@
   background-color: white;
   border-radius: 50%;
 }
-.mainmenu {
-  display: flex;
-  flex-direction: row;
-  color: black;
-}
-.nav-menu {
-  display: flex;
-  flex-direction: row;
-}
-.submenu {
-  background-color: cadetblue;
-}
+
 .nav-item {
   text-align: center;
 }
@@ -182,7 +171,8 @@ a {
   .submenu {
     display: grid;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
     width: 100%;
     line-height: 1;
     border-radius: 0 10px 0 10px;
@@ -200,6 +190,7 @@ a {
   }
   #submissionPopup input {
     font-size: 0.9rem;
+    box-shadow: var(--shadow-bottom);
   }
   #submissionPopup label {
     display: none !important;
@@ -246,15 +237,24 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .dropdown {
+  .mainmenu {
     display: flex;
     align-items: center;
+    position: relative;
+    color: black;
+    left: 6vw !important;
   }
-  .dropdown-menu a:hover::before {
-    content: "-";
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
   }
-  .dropdown-menu a:hover::after {
-    content: "-";
+  .submenu {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    border-radius: 0 0px 10px 10px;
+    right: 4vw;
   }
   #submissionPopup {
     position: fixed !important;

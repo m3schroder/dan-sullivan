@@ -1,11 +1,9 @@
-@keyframes fadeOut {
+@keyframes fade {
   0% {
-    opacity: 1;
-    margin-bottom: 0px;
+    opacity: 0;
   }
   100% {
-    opacity: 0;
-    margin-bottom: 3px;
+    opacity: 1;
   }
 }
 @keyframes jump {
@@ -22,11 +20,9 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    margin-bottom: 3px;
   }
   100% {
     opacity: 1;
-    margin-bottom: 0px;
   }
 }
 @keyframes slideLeft {
@@ -37,10 +33,6 @@
     left: -30vw;
   }
 }
-.slideLeft {
-  animation: slideLeft 0.5s backwards 1;
-  left: -30vw;
-}
 @keyframes slideRight {
   from {
     left: -30vw;
@@ -48,9 +40,6 @@
   to {
     left: 0;
   }
-}
-.slideRight {
-  animation: slideRight 0.5s backwards 1;
 }
 @keyframes subslideLeft {
   from {
@@ -60,10 +49,6 @@
     left: -60vw;
   }
 }
-.subslideLeft {
-  animation: subslideLeft 0.5s backwards 1;
-  left: -60vw;
-}
 @keyframes subslideRight {
   from {
     left: -60vw;
@@ -72,29 +57,46 @@
     left: 0;
   }
 }
-.subslideRight {
-  animation: subslideRight 0.5s backwards;
-}
 @keyframes slideDown {
   from {
-    height: 0;
+    top: -21vh;
   }
   to {
-    height: 30vh;
+    top: 21vh;
   }
 }
 @keyframes slideUp {
   from {
-    height: 30vh;
+    top: 21vh;
   }
   to {
-    height: 0;
+    top: -21vh;
   }
 }
 .jump {
+  animation: jump 0.3s ease;
+}
+.menuJump {
   animation: jump 0.2s ease;
 }
 @media only screen and (max-width: 1350px) {
+  .fade {
+    animation: fade 0.5s ease;
+  }
+  .subOpen {
+    animation: subslideLeft 0.4s backwards 1;
+    left: -60vw;
+  }
+  .subClose {
+    animation: subslideRight 0.4s backwards;
+  }
+  .slideRight {
+    animation: slideRight 0.3s backwards 1;
+  }
+  .slideLeft {
+    animation: slideLeft 0.3s backwards 1;
+    left: -30vw;
+  }
   .slideUp {
     animation: slideUp 0.5s backwards;
     height: 30vh;
@@ -109,5 +111,16 @@
   }
   .fadeIn {
     animation: fadeIn 0.4s ease-in;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  .subOpen {
+    animation: slideDown 0.5s ease;
+    top: 21vh;
+  }
+  .subClose {
+    animation: slideUp 0.5s ease;
+    top: -21vh;
   }
 }

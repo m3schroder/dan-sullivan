@@ -26,10 +26,14 @@ const NavBar = ({ links, onSelect, currentPage }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setFormAnimation(" ");
-      setPhoneAnimation(" ");
+      setFormAnimation("");
+      setPhoneAnimation("");
     }, 200);
-  }, [formAnimation, phoneAnimation]);
+    setTimeout(() => {
+      setmenuAnimation("");
+    }, 500);
+  }, [formAnimation, phoneAnimation, menuAnimation]);
+
   const toggle = (toToggle) => {
     let temp = [false, false, false];
     for (let x = 0; x < open.length; x++) {
@@ -40,15 +44,12 @@ const NavBar = ({ links, onSelect, currentPage }) => {
     setOpen(temp);
     setTimeout(() => {
       setShowSubmenu(false);
-      setSubMenuClass("");
       setMenuClass("");
     }, 500);
   };
   const toggleSubmenu = () => {
-    showSubmenu ? setMenuClass("slideRight") : setMenuClass("slideLeft");
-    showSubmenu
-      ? setSubMenuClass("subslideRight")
-      : setSubMenuClass("subslideLeft");
+    showSubmenu ? setMenuClass("slideRight ") : setMenuClass("slideLeft");
+    showSubmenu ? setSubMenuClass("subClose") : setSubMenuClass("subOpen");
     setShowSubmenu(!showSubmenu);
   };
   const closeAll = () => {
@@ -108,11 +109,8 @@ const NavBar = ({ links, onSelect, currentPage }) => {
         <Navbar.Toggle
           className="nav-logo"
           onClick={() => {
-            setmenuAnimation("fadeOut");
-            setTimeout(() => {
-              toggle(1);
-              setmenuAnimation("fadeIn");
-            }, 200);
+            setmenuAnimation("fade jump ");
+            toggle(1);
           }}
         >
           {open[1] ? (
