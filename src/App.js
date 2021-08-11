@@ -9,16 +9,12 @@ import "./App.css";
 class App extends Component {
   state = {
     currentPage: "Home",
-    submenu: false,
-    splash: true,
   };
 
   handle = {
     onSelect: (path) => {
+      console.log("Selected");
       this.setState({ currentPage: path });
-    },
-    toggleSubmenu: () => {
-      this.setState({ submenu: !this.state.submenu });
     },
   };
 
@@ -44,8 +40,6 @@ class App extends Component {
         <NavBar
           links={links}
           onSelect={this.handle.onSelect}
-          submenu={this.state.submenu}
-          toggleSubmenu={this.handle.toggleSubmenu}
           currentPage={this.state.currentPage}
         />
         <main className="container-fluid main-area">

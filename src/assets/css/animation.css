@@ -1,36 +1,79 @@
 @keyframes fadeOut {
   0% {
     opacity: 1;
+    margin-bottom: 0px;
   }
   100% {
     opacity: 0;
+    margin-bottom: 3px;
+  }
+}
+@keyframes jump {
+  0% {
+    margin-bottom: 0px;
+  }
+  50% {
+    margin-bottom: 3px;
+  }
+  100% {
+    margin-bottom: 0px;
   }
 }
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    margin-bottom: 3px;
   }
   100% {
     opacity: 1;
+    margin-bottom: 0px;
   }
 }
 @keyframes slideLeft {
   from {
-    left: 100vw;
+    left: 0;
   }
   to {
-    left: 0vw;
+    left: -30vw;
   }
+}
+.slideLeft {
+  animation: slideLeft 0.5s backwards 1;
+  left: -30vw;
 }
 @keyframes slideRight {
   from {
-    left: 0px;
-    opacity: 1;
+    left: -30vw;
   }
   to {
-    left: 20px;
-    opacity: 0;
+    left: 0;
   }
+}
+.slideRight {
+  animation: slideRight 0.5s backwards 1;
+}
+@keyframes subslideLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -60vw;
+  }
+}
+.subslideLeft {
+  animation: subslideLeft 0.5s backwards 1;
+  left: -60vw;
+}
+@keyframes subslideRight {
+  from {
+    left: -60vw;
+  }
+  to {
+    left: 0;
+  }
+}
+.subslideRight {
+  animation: subslideRight 0.5s backwards;
 }
 @keyframes slideDown {
   from {
@@ -48,6 +91,9 @@
     height: 0;
   }
 }
+.jump {
+  animation: jump 0.2s ease;
+}
 @media only screen and (max-width: 1350px) {
   .slideUp {
     animation: slideUp 0.5s backwards;
@@ -57,16 +103,11 @@
     animation: slideDown 0.5s backwards;
     height: 0;
   }
-  .subSlideLeft > div {
-    animation: slideLeft 0.5s backwards;
-  }
-  .slideRight {
-    animation: slideRight 0.5s backwards;
-  }
+
   .fadeOut {
-    animation: fadeOut 0.08s ease-out;
+    animation: fadeOut 0.4s ease-out;
   }
   .fadeIn {
-    animation: fadeIn 0.1s ease-in;
+    animation: fadeIn 0.4s ease-in;
   }
 }

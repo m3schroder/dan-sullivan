@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 import { FiMail } from "react-icons/fi";
@@ -13,19 +13,23 @@ import PhonePopup from "./phonePopup";
 
 import "../assets/css/navbar.css";
 
-const NavBar = ({
-  links,
-  onSelect,
-  submenu,
-  toggleSubmenu,
-  currentPage,
-  style = {},
-}) => {
+const NavBar = ({ links, onSelect, currentPage }) => {
   //0 is phone  1 is menu   2 is the form
   const [open, setOpen] = useState([false, false, false]);
-  const [fade, setFade] = useState("");
+  const [menuAnimation, setmenuAnimation] = useState("");
+  const [phoneAnimation, setPhoneAnimation] = useState("");
+  const [formAnimation, setFormAnimation] = useState("");
+  const [showSubmenu, setShowSubmenu] = useState(false);
+  const [menuClass, setMenuClass] = useState("");
+  const [submenuClass, setSubMenuClass] = useState("");
   const anyOpen = open.some((x) => x === true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setFormAnimation(" ");
+      setPhoneAnimation(" ");
+    }, 200);
+  }, [formAnimation, phoneAnimation]);
   const toggle = (toToggle) => {
     let temp = [false, false, false];
     for (let x = 0; x < open.length; x++) {
@@ -34,9 +38,26 @@ const NavBar = ({
       }
     }
     setOpen(temp);
+    setTimeout(() => {
+      setShowSubmenu(false);
+      setSubMenuClass("");
+      setMenuClass("");
+    }, 500);
+  };
+  const toggleSubmenu = () => {
+    showSubmenu ? setMenuClass("slideRight") : setMenuClass("slideLeft");
+    showSubmenu
+      ? setSubMenuClass("subslideRight")
+      : setSubMenuClass("subslideLeft");
+    setShowSubmenu(!showSubmenu);
   };
   const closeAll = () => {
     setOpen([false, false, false]);
+    setTimeout(() => {
+      setSubMenuClass("");
+      setMenuClass("");
+      setShowSubmenu(false);
+    }, 500);
   };
   const renderLink = (link) => {
     let rendered = link.content ? link.content : <p>{link.text}</p>;
@@ -76,37 +97,51 @@ const NavBar = ({
           <img src={logo} alt="awesome logo"></img>
         </Nav.Link>
         {/* Toggle phone when visible */}
-        <BiPhone className="show-mobile icon" onClick={() => toggle(0)} />
+        <BiPhone
+          className={phoneAnimation + " show-mobile icon"}
+          onClick={() => {
+            setPhoneAnimation("jump");
+            toggle(0);
+          }}
+        />
         {/* Toggle Menu */}
         <Navbar.Toggle
           className="nav-logo"
           onClick={() => {
-            setFade("fadeOut");
+            setmenuAnimation("fadeOut");
             setTimeout(() => {
               toggle(1);
-              setFade("fadeIn");
-            }, 80);
+              setmenuAnimation("fadeIn");
+            }, 200);
           }}
         >
           {open[1] ? (
-            <IoMdClose className={fade + " icon"} />
+            <IoMdClose
+              onClick={() => closeAll()}
+              className={menuAnimation + " icon"}
+            />
           ) : (
-            <CgMenuRound className={fade + " icon"} />
+            <CgMenuRound className={menuAnimation + " icon"} />
           )}
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}
-          submenu={submenu}
-          toggleSubmenu={toggleSubmenu}
           onSelect={onSelect}
+          menuClass={menuClass}
+          submenuClass={submenuClass}
+          toggleSubmenu={toggleSubmenu}
+          anyOpen={anyOpen}
           links={links}
           renderLink={renderLink}
         />
         {/* Toggle Form */}
         <div style={{ margin: "5px" }}>
           <FiMail
-            className="icon shadow-none"
-            onClick={() => toggle(2)}
+            className={formAnimation + " icon shadow-none"}
+            onClick={() => {
+              setFormAnimation("jump");
+              toggle(2);
+            }}
             aria-controls="emailPopUp"
             aria-expanded={open[2]}
           />

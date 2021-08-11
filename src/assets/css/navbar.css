@@ -27,6 +27,18 @@
   background-color: white;
   border-radius: 50%;
 }
+.mainmenu {
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+}
+.submenu {
+  background-color: cadetblue;
+}
 .nav-item {
   text-align: center;
 }
@@ -38,17 +50,13 @@ a {
   font-size: var(--nav-text);
   margin: 0 10px 0 10px;
 }
-.dropdown-menu {
-  background-color: var(--secondary-color);
-  box-shadow: var(--shadow);
-  width: 15vw;
+#service-btn {
+  font-size: var(--nav-text);
+  margin: 0 10px 0 10px;
+  color: rgb(255, 255, 255, 0.5);
 }
-.dropdown-menu a {
-  display: inline-flex;
-}
-
-.dropdown-toggle::after {
-  display: none;
+#service-btn:active {
+  color: white;
 }
 .icon {
   color: var(--primary-color) !important;
@@ -57,9 +65,6 @@ a {
 }
 .icon:hover {
   color: rgb(255, 255, 255, 0.8) !important;
-}
-.icon:active {
-  margin-bottom: 3px;
 }
 .popup-box {
   border-radius: 10px 10px 0 0 !important;
@@ -92,16 +97,15 @@ a {
 }
 #submission-box {
   display: grid;
+  font-size: var(--nav-font) !important;
   grid-template-columns: 1fr 1fr;
   padding: 0px 20px 20px 20px;
+  text-align: left;
   column-gap: 5px;
   grid-template-areas:
     "first last"
     "number email"
     "rooms hallways";
-
-  font-size: var(--nav-font) !important;
-  text-align: left;
 }
 
 #first {
@@ -134,9 +138,6 @@ a {
   padding: 6px;
   border-radius: 5px;
 }
-.navbar-toggler {
-  display: none;
-}
 @media only screen and (max-width: 1350px) {
   .nav-container {
     position: fixed !important;
@@ -166,21 +167,27 @@ a {
   .navbar-expand-xl {
     flex-flow: row;
   }
-  .dropdown-menu.show {
+  .nav-menu {
+    display: grid;
+    padding: 0 !important;
+    grid-template-columns: 100vw 60vw !important;
+  }
+  .mainmenu {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .submenu {
     display: grid;
     position: relative;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgba(255, 255, 255, 0.2);
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    line-height: 1;
+    border-radius: 0 10px 0 10px;
   }
-  .dropdown-menu {
-    width: 100vw;
-  }
-  .dropdown-menu li {
-    max-height: 5vh;
-  }
-  .dropdown-menu p {
-    font-size: 0.65em;
+  .submenu p {
+    font-size: 0.7em;
   }
   #submissionPopup {
     position: fixed !important;

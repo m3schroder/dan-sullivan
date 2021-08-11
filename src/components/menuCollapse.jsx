@@ -1,48 +1,50 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "../assets/css/navbar.css";
 
 const MenuCollapse = ({
   currentPage,
-  submenu,
+  menuClass,
+  submenuClass,
   toggleSubmenu,
   links,
   renderLink,
   onSelect,
 }) => {
-  let subMenuClass = submenu ? "subSlideLeft" : "";
   let submenuItems = [];
   return (
     <Navbar.Collapse className="nav-collapse popup-box">
-      <Nav activeKey={currentPage} className="nav-menu">
-        {links.map((link) => {
-          if (link.submenu) {
-            submenuItems.push(link);
-            return null;
-          } else {
-            return (
-              <li key={link.text} className="nav-item">
-                <Nav.Link
-                  as={Link}
-                  id={link.id}
-                  eventKey={link.path}
-                  onClick={() => onSelect(link.path)}
-                  className={link.style}
-                  to={link.path}
-                >
-                  {renderLink(link)}
-                </Nav.Link>
-              </li>
-            );
-          }
-        })}
-        <NavDropdown
-          className={subMenuClass}
-          onClick={() => toggleSubmenu()}
-          title="Services"
-        >
+      <Nav activeKey={currentPage} className={"nav-menu"}>
+        <div className={"mainmenu " + menuClass}>
+          {links.map((link) => {
+            if (link.submenu) {
+              submenuItems.push(link);
+              return null;
+            } else {
+              return (
+                <li key={link.text} className="nav-item">
+                  <Nav.Link
+                    as={Link}
+                    id={link.id}
+                    eventKey={link.path}
+                    onClick={() => onSelect(link.path)}
+                    className={link.style}
+                    to={link.path}
+                  >
+                    {renderLink(link)}
+                  </Nav.Link>
+                </li>
+              );
+            }
+          })}
+
+          <li id="service-btn" onClick={() => toggleSubmenu()}>
+            Services
+          </li>
+        </div>
+        <div className={"submenu " + submenuClass}>
           {submenuItems.map((subitem) => (
             <li key={subitem.text}>
               <Nav.Link
@@ -57,7 +59,7 @@ const MenuCollapse = ({
               </Nav.Link>
             </li>
           ))}
-        </NavDropdown>
+        </div>
       </Nav>
     </Navbar.Collapse>
   );
