@@ -51,6 +51,7 @@ a {
   margin: 0 10px 0 10px;
 }
 #service-btn {
+  cursor: pointer;
   font-size: var(--nav-text);
   margin: 0 10px 0 10px;
   color: rgb(255, 255, 255, 0.5);
