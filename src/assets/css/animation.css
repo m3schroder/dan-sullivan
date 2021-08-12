@@ -1,9 +1,14 @@
 @keyframes fade {
   0% {
     opacity: 0;
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 7px;
   }
   100% {
     opacity: 1;
+    margin-bottom: 0;
   }
 }
 @keyframes jump {
@@ -77,12 +82,9 @@
 .jump {
   animation: jump 0.2s ease;
 }
-.menuJump {
-  animation: jump 0.5s ease;
-}
 @media only screen and (max-width: 1350px) {
   .fade {
-    animation: fade 0.5s ease;
+    animation: fade 0.35s;
   }
   .subOpen {
     animation: subslideLeft 0.4s backwards 1;

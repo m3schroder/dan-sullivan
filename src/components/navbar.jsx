@@ -31,41 +31,54 @@ const NavBar = ({ links, onSelect, currentPage }) => {
     }, 200);
     setTimeout(() => {
       setmenuAnimation("");
-    }, 500);
+    }, 350);
   }, [formAnimation, phoneAnimation, menuAnimation]);
 
-  const toggle = (toToggle) => {
-    let temp = [false, false, false];
-    for (let x = 0; x < open.length; x++) {
-      if (x === toToggle) {
-        temp[x] = !open[x];
+  const popups = {
+    toggle: (toToggle) => {
+      let temp = [false, false, false];
+      for (let x = 0; x < open.length; x++) {
+        if (x === toToggle) {
+          temp[x] = !open[x];
+        }
       }
-    }
-    setOpen(temp);
-    if (window.screen.width < 1350) {
-      setSubMenuClass("");
-    } else setSubMenuClass("subClose");
-    setTimeout(() => {
-      setShowSubmenu(false);
-      setMenuClass("");
-    }, 500);
+      setOpen(temp);
+      if (window.screen.width < 1350) {
+        setSubMenuClass("");
+      } else setSubMenuClass("subClose");
+      setTimeout(() => {
+        setShowSubmenu(false);
+        setMenuClass("");
+      }, 500);
+    },
+    closeAll: () => {
+      setOpen([false, false, false]);
+      if (window.screen.width < 1350) {
+        setSubMenuClass("");
+      } else setSubMenuClass("subClose");
+      setTimeout(() => {
+        setMenuClass("");
+        setShowSubmenu(false);
+      }, 500);
+    },
   };
-  const toggleSubmenu = () => {
-    setOpen([false, open[1], false]);
-    showSubmenu ? setMenuClass("slideRight ") : setMenuClass("slideLeft");
-    showSubmenu ? setSubMenuClass("subClose") : setSubMenuClass("subOpen");
-    setShowSubmenu(!showSubmenu);
+  const submenu = {
+    toggle: () => {
+      setOpen([false, open[1], false]);
+      showSubmenu ? submenu.close() : submenu.open();
+      showSubmenu ? submenu.close() : submenu.open();
+      setShowSubmenu(!showSubmenu);
+    },
+    close: () => {
+      setMenuClass("slideRight ");
+      setSubMenuClass("subClose");
+    },
+    open: () => {
+      setMenuClass("slideLeft ");
+      setSubMenuClass("subOpen");
+    },
   };
-  const closeAll = () => {
-    setOpen([false, false, false]);
-    if (window.screen.width < 1350) {
-      setSubMenuClass("");
-    } else setSubMenuClass("subClose");
-    setTimeout(() => {
-      setMenuClass("");
-      setShowSubmenu(false);
-    }, 500);
-  };
+
   const renderLink = (link) => {
     let rendered = link.content ? link.content : <p>{link.text}</p>;
     return rendered;
@@ -75,19 +88,23 @@ const NavBar = ({ links, onSelect, currentPage }) => {
     <div className="nav-screen">
       {/* Controls background used to close popups */}
       {anyOpen ? (
-        <div className="nav-focus" onClick={() => closeAll()} />
+        <div className="nav-focus" onClick={() => popups.closeAll()} />
       ) : null}
       <Navbar
-        onSelect={() => closeAll()}
+        onSelect={() => popups.closeAll()}
         className="navbar-dark nav-container"
         expand="xl"
         expanded={open[1]}
       >
         {/* Actual phone popup */}
-        <PhonePopup open={open[0]} toggle={toggle} popUpId="phonePopup" />
+        <PhonePopup
+          open={open[0]}
+          toggle={popups.toggle}
+          popUpId="phonePopup"
+        />
         <SubmissionForm
           open={open[2]}
-          toggle={toggle}
+          toggle={popups.toggle}
           popUpId="submissionPopup"
         />
         <Nav.Link
@@ -96,7 +113,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
           onClick={() => {
             console.log(currentPage);
             onSelect("Home");
-            closeAll();
+            popups.closeAll();
           }}
           className="nav-logo hide-mobile"
           to={"/"}
@@ -108,20 +125,20 @@ const NavBar = ({ links, onSelect, currentPage }) => {
           className={phoneAnimation + " show-mobile icon"}
           onClick={() => {
             setPhoneAnimation("jump");
-            toggle(0);
+            popups.toggle(0);
           }}
         />
         {/* Toggle Menu */}
         <Navbar.Toggle
           className="nav-logo"
           onClick={() => {
-            setmenuAnimation("fade menuJump ");
-            toggle(1);
+            setmenuAnimation("fade");
+            popups.toggle(1);
           }}
         >
           {open[1] ? (
             <IoMdClose
-              onClick={() => closeAll()}
+              onClick={() => popups.closeAll()}
               className={menuAnimation + " icon"}
             />
           ) : (
@@ -133,8 +150,9 @@ const NavBar = ({ links, onSelect, currentPage }) => {
           onSelect={onSelect}
           menuClass={menuClass}
           submenuClass={submenuClass}
-          toggleSubmenu={toggleSubmenu}
-          anyOpen={anyOpen}
+          toggleSubmenu={submenu.toggle}
+          openSub={submenu.open}
+          closeSub={submenu.close}
           links={links}
           renderLink={renderLink}
         />
@@ -144,7 +162,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
             className={formAnimation + " icon shadow-none"}
             onClick={() => {
               setFormAnimation("jump");
-              toggle(2);
+              popups.toggle(2);
             }}
             aria-controls="emailPopUp"
             aria-expanded={open[2]}

@@ -9,8 +9,9 @@ const MenuCollapse = ({
   menuClass,
   submenuClass,
   toggleSubmenu,
+  openSub,
+  closeSub,
   links,
-  renderLink,
   onSelect,
 }) => {
   let submenuItems = [];
@@ -35,18 +36,25 @@ const MenuCollapse = ({
                     className={link.style}
                     to={link.path}
                   >
-                    {renderLink(link)}
+                    <p>{link.text}</p>
                   </Nav.Link>
                 </li>
               );
             }
           })}
 
-          <li id="service-btn" onClick={() => toggleSubmenu()}>
+          <li
+            id="service-btn"
+            onMouseEnter={() => openSub()}
+            onMouseDown={() => toggleSubmenu()}
+          >
             Services
           </li>
         </div>
-        <div className={"submenu " + submenuClass}>
+        <div
+          onMouseLeave={() => closeSub()}
+          className={"submenu " + submenuClass}
+        >
           {submenuItems.map((subitem) => (
             <li key={subitem.text}>
               <Nav.Link
@@ -59,7 +67,7 @@ const MenuCollapse = ({
                 className={subitem.style}
                 to={subitem.path}
               >
-                {renderLink(subitem)}
+                <p>{subitem.text}</p>
               </Nav.Link>
             </li>
           ))}

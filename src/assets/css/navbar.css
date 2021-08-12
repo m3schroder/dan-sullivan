@@ -1,7 +1,7 @@
 .nav-container {
   position: fixed !important;
   width: 100%;
-  z-index: 3;
+  z-index: 500;
   justify-content: space-around;
   align-content: center;
   box-shadow: black;
@@ -14,7 +14,7 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 2 !important;
+  z-index: 200 !important;
   background-color: rgba(0, 0, 0, 0.336);
 }
 .navbar-toggler {
@@ -238,21 +238,28 @@ a {
     display: flex;
     align-items: center;
     position: relative;
-    color: black;
     left: 4.5vw !important;
   }
   .nav-menu {
     display: flex;
     flex-direction: row;
+    position: relative;
+    height: var(--nav-bar-height);
+    z-index: 100 !important;
+  }
+  #service-btn {
+    position: relative;
+    z-index: 300;
   }
   .submenu {
     background-color: var(--secondary-color);
     border-radius: 10px;
     position: relative;
+    z-index: 200;
+    height: 25em;
     text-align: center;
     box-shadow: var(--shadow);
     border-radius: 0 0px 10px 10px;
-    right: 3vw;
   }
   #submissionPopup {
     position: fixed !important;
