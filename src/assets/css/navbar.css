@@ -77,11 +77,6 @@ a {
   justify-content: space-evenly;
   margin-top: 10px;
 }
-
-#phone-box > .btn {
-  width: 30%;
-  font-size: var(--nav-font);
-}
 #submissionPopup {
   box-shadow: var(--shadow-top);
 }
@@ -119,6 +114,11 @@ a {
 #submission-box label {
   color: var(--nav-font);
   font-weight: 500;
+}
+#submissionPopup input {
+  font-size: 0.9rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-bottom);
 }
 .form-submit-btn {
   width: 30%;
@@ -171,7 +171,7 @@ a {
   .submenu {
     display: grid;
     position: relative;
-    background-color: var(--secondary-color);
+    background-color: rgb(255, 255, 255, 0.2);
     box-shadow: var(--shadow);
     width: 100%;
     line-height: 1;
@@ -188,10 +188,7 @@ a {
     text-align: center;
     border-radius: 10px 10px 0 0 !important;
   }
-  #submissionPopup input {
-    font-size: 0.9rem;
-    box-shadow: var(--shadow-bottom);
-  }
+
   #submissionPopup label {
     display: none !important;
   }
@@ -242,7 +239,7 @@ a {
     align-items: center;
     position: relative;
     color: black;
-    left: 6vw !important;
+    left: 4.5vw !important;
   }
   .nav-menu {
     display: flex;
@@ -253,8 +250,9 @@ a {
     border-radius: 10px;
     position: relative;
     text-align: center;
+    box-shadow: var(--shadow);
     border-radius: 0 0px 10px 10px;
-    right: 4vw;
+    right: 3vw;
   }
   #submissionPopup {
     position: fixed !important;

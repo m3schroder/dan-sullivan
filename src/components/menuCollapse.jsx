@@ -29,7 +29,9 @@ const MenuCollapse = ({
                     as={Link}
                     id={link.id}
                     eventKey={link.path}
-                    onClick={() => onSelect(link.path)}
+                    onClick={() => {
+                      onSelect(link.path);
+                    }}
                     className={link.style}
                     to={link.path}
                   >
@@ -51,7 +53,9 @@ const MenuCollapse = ({
                 as={Link}
                 id={subitem.id}
                 eventKey={subitem.path}
-                onClick={() => onSelect(subitem.path)}
+                onClick={() => {
+                  onSelect(subitem.path);
+                }}
                 className={subitem.style}
                 to={subitem.path}
               >

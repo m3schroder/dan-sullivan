@@ -11,7 +11,7 @@
     margin-bottom: 0px;
   }
   50% {
-    margin-bottom: 3px;
+    margin-bottom: 7px;
   }
   100% {
     margin-bottom: 0px;
@@ -57,27 +57,28 @@
     left: 0;
   }
 }
+
 @keyframes slideDown {
   from {
-    top: -21vh;
+    top: var(--sub-closed-height);
   }
   to {
-    top: 21vh;
+    top: var(--sub-opened-height);
   }
 }
 @keyframes slideUp {
   from {
-    top: 21vh;
+    top: var(--sub-opened-height);
   }
   to {
-    top: -21vh;
+    top: var(--sub-closed-height);
   }
 }
 .jump {
-  animation: jump 0.3s ease;
+  animation: jump 0.2s ease;
 }
 .menuJump {
-  animation: jump 0.2s ease;
+  animation: jump 0.5s ease;
 }
 @media only screen and (max-width: 1350px) {
   .fade {
@@ -117,10 +118,10 @@
 @media only screen and (min-width: 1350px) {
   .subOpen {
     animation: slideDown 0.5s ease;
-    top: 21vh;
+    top: var(--sub-opened-height);
   }
   .subClose {
     animation: slideUp 0.5s ease;
-    top: -21vh;
+    top: var(--sub-closed-height);
   }
 }

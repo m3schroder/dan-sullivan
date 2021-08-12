@@ -15,7 +15,7 @@ class Form extends Component {
       <button
         onClick={onClick}
         disabled={this.validate()}
-        className="btn btn-primary form-submit-btn"
+        className="btn btn-primary"
       >
         {label}
       </button>

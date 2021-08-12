@@ -15,6 +15,9 @@
   --nav-text: 18px;
   --nav-heading: 1rem;
 
+  --sub-closed-height: -13rem;
+  --sub-opened-height: 13rem;
+
   --shadow: 0px 0px 15px rgba(0, 0, 0, 0.226);
   --shadow-top: 0px -10px 20px rgba(0, 0, 0, 0.2);
   --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.2);
@@ -77,6 +80,11 @@ code {
 }
 .shown {
   display: block !important;
+}
+.btn {
+  width: 26%;
+  font-size: var(--nav-font);
+  border-radius: 35px !important;
 }
 
 @media only screen and (max-width: 1350px) {
