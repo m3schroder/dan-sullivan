@@ -1,12 +1,8 @@
-.home-container {
-  display: grid;
-  padding: 5vh 10vw 5vh 10vw;
-  justify-items: center;
-  align-items: center;
+#home {
   grid-template-areas:
     /* "banner banner" */
-    "one two"
-    "four three";
+    "two one"
+    "three four";
 }
 #home-banner {
   /* grid-area: banner; */
@@ -15,6 +11,7 @@
   align-items: center;
   position: absolute;
   top: var(--nav-bar-height);
+  height: var(--nav-bar-height);
   width: 100vw;
   text-align: center;
   color: var(--banner-light);
@@ -24,47 +21,11 @@
   background-color: white;
   box-shadow: var(--shadow-bottom);
 }
-#home-banner img {
-  height: 2rem;
-  padding: 1px;
-  background-color: white;
-  border-radius: 50%;
-}
-#one {
-  grid-area: one;
-}
 #two {
-  grid-area: two;
   padding: 50px;
-}
-#three {
-  grid-area: three;
 }
 #four {
-  grid-area: four;
   padding: 50px;
-}
-.home-banner {
-  width: 100%;
-}
-.text-container {
-  text-align: center;
-  font-size: 25px;
-  padding: 30px;
-}
-.text-container h1 {
-  color: var(--heading-color);
-  font-family: "Montserrat";
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 15px;
-  text-align: left;
-}
-.text-container div {
-  font-size: 0.8em;
-  color: var(--text-color);
-  text-align: left;
-  line-height: 1.8em;
 }
 .home-splash {
   width: 100vw;
@@ -78,16 +39,9 @@
   font-size: 2.5em;
   font-weight: 700;
 }
-.page-image {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.233);
-}
 
 @media only screen and (max-width: 1350px) {
-  .home-container {
-    padding: 2vh 3vw 0 3vw;
-    margin-bottom: 5vh;
+  #home {
     grid-template-areas:
       "two"
       "one"
@@ -96,18 +50,14 @@
   }
   #home-banner {
     position: relative !important;
-    top: unset;
-    font-size: 1.5rem;
+    top: 0;
+    font-size: 1.3rem;
     color: var(--banner-dark);
     background-color: var(--secondary-color);
-    margin-bottom: 20px;
   }
-  .text-container {
-    padding: 30px 10px 30px 10px;
-    font-size: 1.2em;
-  }
-  .text-container h1 {
-    font-size: 1.2rem;
+  #home-banner img {
+    height: calc(var(--nav-bar-height) * 0.75);
+    margin-right: 10px;
   }
   #two {
     grid-area: two;
@@ -116,8 +66,5 @@
   #four {
     grid-area: four;
     padding: 0px;
-  }
-  .text-container p {
-    font-size: 18px;
   }
 }

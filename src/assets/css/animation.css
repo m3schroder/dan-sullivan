@@ -119,11 +119,11 @@
 
 @media only screen and (min-width: 1350px) {
   .subOpen {
-    animation: slideDown 0.5s ease;
+    animation: slideDown 0.2s forwards;
     top: var(--sub-opened-height);
   }
   .subClose {
-    animation: slideUp 0.5s ease;
+    animation: slideUp 0.2s backwards;
     top: var(--sub-closed-height);
   }
 }

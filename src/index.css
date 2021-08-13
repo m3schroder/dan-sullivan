@@ -10,15 +10,17 @@
   --banner-light: rgb(0, 0, 0, 0.8);
   --banner-dark: rgb(255, 255, 255, 0.8);
 
-  --text-color: black;
+  --text-color: rgba(0, 0, 0, 0.8);
   --nav-bar-height: 7vmax;
   --nav-text: 18px;
   --nav-heading: 1rem;
 
+  --page-padding: 4vh 10vw 5vh 10vw;
+
   --sub-closed-height: -25rem;
   --sub-opened-height: 3rem;
 
-  --shadow: 0px 0px 15px rgba(0, 0, 0, 0.226);
+  --shadow: 0px 1px 9px rgba(0, 0, 0, 0.233);
   --shadow-top: 0px -10px 20px rgba(0, 0, 0, 0.2);
   --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.2);
 }
@@ -47,6 +49,54 @@ code {
   display: none;
 }
 
+/* Normal page styles */
+.page-container {
+  padding: var(--page-padding);
+  display: grid;
+  grid-row-gap: 3vh;
+  justify-items: center;
+  align-items: center;
+}
+.text-container {
+  text-align: left;
+  font-size: 25px;
+  padding: 20px;
+}
+.text-container h1 {
+  color: var(--heading-color);
+  font-family: "Montserrat";
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.text-container div {
+  font-size: 0.8em;
+  color: var(--text-color);
+  line-height: 1.7em;
+}
+.page-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
 .main-area {
   padding: 62px 0px 30px 0px !important;
 }
@@ -88,6 +138,9 @@ code {
 }
 
 @media only screen and (max-width: 1350px) {
+  :root {
+    --page-padding: 5vh 3vw 0 3vw;
+  }
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
@@ -98,6 +151,28 @@ code {
   }
   .show-mobile {
     display: block !important;
+  }
+  .text-container {
+    text-align: center;
+    font-size: 25px;
+    padding: 30px;
+  }
+  .text-container h1 {
+    color: var(--heading-color);
+    font-family: "Montserrat";
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .text-container div {
+    font-size: 0.8em;
+    color: var(--text-color);
+    text-align: left;
+    line-height: 1.8em;
+  }
+  .text-container p {
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 650px) and (max-width: 1350px) {

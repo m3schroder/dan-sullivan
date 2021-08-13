@@ -24,6 +24,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
   const [submenuClass, setSubMenuClass] = useState("subClose");
   const anyOpen = open.some((x) => x === true);
 
+  //Animation handling
   useEffect(() => {
     setTimeout(() => {
       setFormAnimation("");

@@ -1,0 +1,10 @@
+#carpet {
+  grid-template-areas:
+    "one two"
+    "three three"
+    "four ." !important;
+}
+#carpet #one {
+}
+#carpet #three {
+}

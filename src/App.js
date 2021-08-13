@@ -4,7 +4,15 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NavBar from "./components/navbar";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
+import Gallery from "./pages/gallery";
 import "./App.css";
+import About from "./pages/about";
+import Carpet from "./pages/carpet";
+import Rug from "./pages/rug";
+import Upholstery from "./pages/upholstery";
+import Tile from "./pages/tile";
+import Stain from "./pages/stain";
+import Commercial from "./pages/commercial";
 
 class App extends Component {
   state = {
@@ -45,6 +53,14 @@ class App extends Component {
         <main className="container-fluid main-area">
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/gallery" exact component={Gallery} />
+            <Route path="/carpet" exact component={Carpet} />
+            <Route path="/rug" exact component={Rug} />
+            <Route path="/upholstery" exact component={Upholstery} />
+            <Route path="/tile" exact component={Tile} />
+            <Route path="/stain" exact component={Stain} />
+            <Route path="/commercial" exact component={Commercial} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/" />
             <Redirect from="/home" exact to="/" />

@@ -257,7 +257,7 @@ a {
     position: relative;
     z-index: 200;
     height: 25em;
-    text-align: center;
+    text-align: start;
     box-shadow: var(--shadow);
     border-radius: 0 0px 10px 10px;
   }
@@ -276,6 +276,6 @@ a {
     border-radius: 10px 10px 10px 10px !important;
   }
   .icon {
-    margin: 10px;
+    margin-right: 10px;
   }
 }
