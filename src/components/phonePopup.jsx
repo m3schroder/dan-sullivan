@@ -10,7 +10,7 @@ const PhonePopup = ({ open, popUpId, toggle }) => {
     <PopUp open={open} className="popup-box" id={popUpId}>
       <CloseButton onClose={toggle} />
       <div style={{ padding: "5%" }}>
-        <p>Give us a call?</p>
+        <h1>Give us a call?</h1>
         <div id="phone-box">
           <a className="btn btn-primary" href="tel:6159056292">
             Yes

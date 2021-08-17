@@ -1,17 +1,32 @@
 import React from "react";
-import "../assets/css/about.css";
+
+import { splash } from "../assets/images";
+import "../assets/css/menu.css";
 
 const About = () => {
   return (
     <>
-      <div className="carpet-container">
-        <div className="text-container" id="one">
-          <h1>Why Choose Our Carpet Cleaning Service?</h1>
+      <div id="about" className="page-container">
+        <div id="one">
+          <img src={splash} alt="" />
+          <h1>Miraculous Carpet Care</h1>
+        </div>
+        <div className="text-container" id="two">
+          <h1>Ask dan if there is anything he would like to put here</h1>
           <div>
-            We service areas in and around Franklin, Brentwood, and Spring hill
-            and are committed to your flooring needs. Whether your a health
-            coach, house cleaner, or dog trainer, our carpet cleaning experts
-            are sure to impress!
+            Put a little personal touch on the website by having the owner of
+            the company address clients himself
+          </div>
+
+          <h1 className="line-break">
+            Welcome to Franklin's Favorite Carpet Cleaners!
+          </h1>
+          <div>
+            Miraculous Carpet Care is Franklin's go to carpet cleaning service
+            located South of Nashville, Tennessee! We take great pride in
+            offering you the best carpet and floor cleaning solutions around! Be
+            sure to check out our carpet cleaning services page to find out
+            more!
             <div className="line-break" />
             We go above and beyond your normal carpet cleaner! Our carpet
             technicians utilize state of the art cleaning supplies and
@@ -19,35 +34,6 @@ const About = () => {
             carpet stain detergent spray is used as a protective barrier (on
             request) to keep your carpet looking clean!
           </div>
-        </div>
-        <div id="two">
-          <img className="page-image"></img>
-        </div>
-
-        <div className="text-container" id="three">
-          <h1>Carpet Cleaning in Williamson County</h1>
-          <div>
-            Our carpet cleaning specialist enjoys giving you the cleanest floors
-            and scheduling has never been easier. Once we set up your
-            appointment, you can relax and get ready to enjoy your steam cleaned
-            space. We offer a wide variety of services for tiles, carpet,
-            upholstery and more. Rely on our professional and hardworking crew
-            who has over 20 years experience in the cleaning industry.
-            <div className="line-break" /> Our workers are on time, courteous,
-            respectful and, best of all, thorough. Your privacy and cleanliness
-            is our top priority! We're educated, well spoken, and ready to work.
-            ​Hire the best carpet cleaning service in the Williamson County area
-            today!
-            <div className="line-break" /> Call us at
-            <a href="tel:6159056292">
-              <strong style={{ fontSize: ".9em" }}> 615-905-6292 </strong>
-            </a>
-            or click
-            <strong> here</strong> to schedule!
-          </div>
-        </div>
-        <div id="four">
-          <img className="page-image"></img>
         </div>
       </div>
     </>

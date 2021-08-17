@@ -21,7 +21,7 @@ const Commercial = () => {
           </div>
         </div>
         <div id="two">
-          <img className="page-image"></img>
+          <img className="page-image" alt=""></img>
         </div>
 
         <div className="text-container" id="three">
@@ -47,7 +47,7 @@ const Commercial = () => {
           </div>
         </div>
         <div id="four">
-          <img className="page-image"></img>
+          <img className="page-image" alt=""></img>
         </div>
       </div>
     </>

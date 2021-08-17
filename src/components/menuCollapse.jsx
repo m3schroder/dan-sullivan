@@ -45,8 +45,8 @@ const MenuCollapse = ({
 
           <li
             id="service-btn"
-            onMouseEnter={() => openSub()}
             onMouseDown={() => toggleSubmenu()}
+            onMouseEnter={() => openSub()}
           >
             Services
           </li>

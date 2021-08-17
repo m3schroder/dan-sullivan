@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { logo } from "../assets/images/index";
-import "../assets/css/homepage.css";
+import "../assets/css/menu.css";
 import { splash, carpetCleaning } from "../assets/images/index";
 
 class Home extends Component {
@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <>
         <div id="home-banner">
-          <img className="show-mobile" src={logo} />
+          <img className="show-mobile" src={logo} alt="" />
           Miraculous Carpet Care
         </div>
         <div id="home" className="page-container">
@@ -30,7 +30,6 @@ class Home extends Component {
           </div>
           <div id="two">
             <img
-              className="page-image"
               src={splash}
               alt="Captivating shot of the best carpet cleaner in middle TN"
             ></img>
@@ -60,11 +59,7 @@ class Home extends Component {
             </div>
           </div>
           <div id="four">
-            <img
-              className="page-image"
-              src={carpetCleaning}
-              alt="Stock cleaning"
-            ></img>
+            <img src={carpetCleaning} alt="Stock cleaning"></img>
           </div>
         </div>
       </>

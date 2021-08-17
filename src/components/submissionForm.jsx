@@ -19,6 +19,8 @@ class SubmissionForm extends Form {
       email: "",
       rooms: "",
       hallways: "",
+      street: "",
+      city: "",
     },
     errors: {},
   };
@@ -33,7 +35,8 @@ class SubmissionForm extends Form {
     email: Joi.string().email().required().label("Email"),
     rooms: Joi.number().integer().required().label("Number of rooms"),
     hallways: Joi.number().integer().required().label("Number of hallways"),
-    message: Joi.label("Message"),
+    street: Joi.string().required().label("Address"),
+    city: Joi.string().required().label("Address"),
   };
 
   inputs = [
@@ -59,6 +62,20 @@ class SubmissionForm extends Form {
       required: true,
     },
     {
+      id: "street",
+      name: "street",
+      label: "Street",
+      type: "string",
+      required: true,
+    },
+    {
+      id: "city",
+      name: "city",
+      label: "City",
+      type: "string",
+      required: true,
+    },
+    {
       id: "rooms",
       name: "rooms",
       label: "# Rooms",
@@ -76,12 +93,15 @@ class SubmissionForm extends Form {
 
   doSubmit = (e) => {
     e.preventDefault();
-    let { first, last, email, number, rooms, hallways } = e.target;
+    let { first, last, email, number, street, city, rooms, hallways } =
+      e.target;
     let contactCard = createContactCard(
       first.value,
       last.value,
       email.value,
-      number.value
+      number.value,
+      street.value,
+      city.value
     );
     var base64 = btoa(contactCard);
     emailjs
@@ -95,6 +115,8 @@ class SubmissionForm extends Form {
           hallways: hallways.value,
           email: email.value,
           number: number.value,
+          street: street.value,
+          city: city.value,
           content: base64,
         },
         "user_IW2ooKqhMLZoZM5ipPIyj"

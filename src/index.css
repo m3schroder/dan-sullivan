@@ -12,9 +12,11 @@
 
   --text-color: rgba(0, 0, 0, 0.8);
   --nav-bar-height: 7vmax;
-  --nav-text: 18px;
-  --nav-heading: 1rem;
+  --nav-text: 1.1rem;
+  --nav-heading: 1.4rem;
 
+  --page-text: 0.9em;
+  --page-heading: 1.2em;
   --page-padding: 4vh 10vw 5vh 10vw;
 
   --sub-closed-height: -25rem;
@@ -57,27 +59,29 @@ code {
   justify-items: center;
   align-items: center;
 }
+.page-container img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
 .text-container {
   text-align: left;
   font-size: 25px;
   padding: 20px;
+  white-space: pre-wrap;
 }
 .text-container h1 {
   color: var(--heading-color);
   font-family: "Montserrat";
-  font-size: 1em;
+  font-size: var(--page-heading);
   font-weight: 600;
   margin-bottom: 15px;
 }
 .text-container div {
-  font-size: 0.8em;
+  font-size: var(--page-text);
   color: var(--text-color);
   line-height: 1.7em;
-}
-.page-image {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
+  font-weight: 500;
 }
 #one {
   grid-area: one;
@@ -177,11 +181,11 @@ code {
 }
 @media only screen and (min-width: 650px) and (max-width: 1350px) {
   :root {
-    --nav-bar-height: 4.2vmax;
+    --nav-bar-height: 4.5vmax;
   }
 }
 @media only screen and (min-width: 1350px) {
   :root {
-    --nav-bar-height: 2.5vmax;
+    --nav-bar-height: 3vmax;
   }
 }

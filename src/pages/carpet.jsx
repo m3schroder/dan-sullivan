@@ -56,7 +56,7 @@ const Carpet = () => {
         </div>
         <div id="two">
           Checking
-          <img className="page-image"></img>
+          <img className="page-image" alt=""></img>
         </div>
 
         <div className="text-container" id="three">
@@ -83,7 +83,7 @@ const Carpet = () => {
         </div>
         <div id="four">
           Checking
-          <img className="page-image"></img>
+          <img className="page-image" alt=""></img>
         </div>
       </div>
     </>

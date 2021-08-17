@@ -36,12 +36,12 @@
 }
 .nav-menu p,
 a {
-  font-size: var(--nav-text);
+  font-size: var(--nav-heading);
   margin: 0 10px 0 10px;
 }
 #service-btn {
   cursor: pointer;
-  font-size: var(--nav-text);
+  font-size: var(--nav-heading);
   margin: 0 10px 0 10px;
   color: rgb(255, 255, 255, 0.5);
 }
@@ -58,6 +58,7 @@ a {
 }
 .popup-box {
   border-radius: 10px 10px 0 0 !important;
+  position: relative;
 }
 #phonePopup {
   color: var(--nav-font);
@@ -68,7 +69,7 @@ a {
   width: 100vw;
   text-align: center;
 }
-#phonePopup p {
+#phonePopup h1 {
   font-size: var(--nav-heading);
   color: var(--nav-font);
 }
@@ -82,35 +83,13 @@ a {
 }
 #submission-box {
   display: grid;
-  font-size: var(--nav-font) !important;
+  font-size: var(--nav-text) !important;
   grid-template-columns: 1fr 1fr;
   padding: 0px 20px 20px 20px;
   text-align: left;
   column-gap: 5px;
-  grid-template-areas:
-    "first last"
-    "number email"
-    "rooms hallways";
 }
 
-#first {
-  grid-area: first;
-}
-#last {
-  grid-area: last;
-}
-#number {
-  grid-area: number;
-}
-#email {
-  grid-area: email;
-}
-#rooms {
-  grid-area: rooms;
-}
-#hallways {
-  grid-area: hallways;
-}
 #submission-box label {
   color: var(--nav-font);
   font-weight: 500;
@@ -174,11 +153,11 @@ a {
     background-color: rgb(255, 255, 255, 0.2);
     box-shadow: var(--shadow);
     width: 100%;
-    line-height: 1;
+    line-height: 1.8;
     border-radius: 0 10px 0 10px;
   }
   .submenu p {
-    font-size: 0.7em;
+    font-size: var(--nav-text);
   }
   #submissionPopup {
     position: fixed !important;
@@ -187,19 +166,19 @@ a {
     width: 100vw;
     text-align: center;
     border-radius: 10px 10px 0 0 !important;
+    bottom: unset;
+    transition-property: bottom;
+    transition-duration: 0.5s;
   }
-
+  #submissionPopup:focus-within {
+    bottom: 0 !important;
+  }
   #submissionPopup label {
     display: none !important;
   }
   #submission-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "first last"
-      "email email"
-      "number number"
-      "rooms hallways";
     column-gap: 5px;
   }
 }
@@ -238,7 +217,7 @@ a {
     display: flex;
     align-items: center;
     position: relative;
-    left: 4.5vw !important;
+    left: 6vw !important;
   }
   .nav-menu {
     display: flex;
@@ -256,7 +235,7 @@ a {
     border-radius: 10px;
     position: relative;
     z-index: 200;
-    height: 25em;
+    height: 45vh;
     text-align: start;
     box-shadow: var(--shadow);
     border-radius: 0 0px 10px 10px;

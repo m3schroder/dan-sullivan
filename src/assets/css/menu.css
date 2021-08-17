@@ -1,11 +1,26 @@
 #home {
+  margin-top: 30px;
   grid-template-areas:
-    /* "banner banner" */
     "two one"
     "three four";
 }
+#about {
+  grid-template-areas: "one" "two";
+}
+#about #one {
+  position: relative;
+}
+#about #one img {
+  position: relative;
+  right: 10vw;
+  height: 20vh;
+  width: 100vw;
+  object-fit: cover;
+}
+#gallery {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 #home-banner {
-  /* grid-area: banner; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,17 +42,23 @@
 #home #four {
   padding: 50px;
 }
-.home-splash {
-  width: 100vw;
-  height: 8vh !important;
-  background-image: url("../images/plain-carpet.jpg");
+#gallery div {
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: var(--heading-color);
-  text-shadow: 0px 0px 200px white;
-  font-size: 2.5em;
-  font-weight: 700;
+  width: 80%;
+}
+#gallery img {
+  border-radius: 15px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.041);
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1350px) {
+  #gallery {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 1350px) {
@@ -60,11 +81,16 @@
     margin-right: 10px;
   }
   #home #two {
-    grid-area: two;
     padding: 0px;
   }
   #home #four {
-    grid-area: four;
     padding: 0px;
+  }
+  #gallery {
+    grid-template-columns: 1fr;
+  }
+  #gallery img {
+    background-color: white;
+    width: 100% !important;
   }
 }
