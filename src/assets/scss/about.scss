@@ -1,0 +1,20 @@
+#about {
+  grid-template-rows: min-content;
+  grid-template-areas: "two";
+  #one {
+    position: relative;
+    img {
+      position: relative;
+      right: 10vw;
+      height: 20vh;
+      width: 100vw;
+      object-fit: cover;
+    }
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1350px) {
+}
+
+@media only screen and (max-width: 1350px) {
+}

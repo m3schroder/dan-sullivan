@@ -1,7 +1,7 @@
 import React from "react";
 
 import images from "../assets/images/gallery";
-import "../assets/css/menu.css";
+import "../assets/scss/gallery.scss";
 
 const Gallery = () => {
   return (

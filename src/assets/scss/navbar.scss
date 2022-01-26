@@ -109,6 +109,7 @@
     box-shadow: var(--shadow-bottom);
   }
 }
+//Smaller screens
 @media only screen and (max-width: 1350px) {
   .nav-container {
     position: fixed !important;
@@ -129,6 +130,7 @@
     bottom: var(--nav-bar-height) !important;
     background-color: var(--secondary-color);
     box-shadow: var(--shadow-top);
+    border-radius: 10px 10px 0 0;
     width: 100vw;
     text-align: center;
   }
@@ -150,15 +152,18 @@
     justify-content: center;
   }
   .submenu {
-    background-color: rgb(
-      255,
-      255,
-      255ssssssssssssssssssssssssssssssssssssssssssss 0.2
-    );
-    box-shadow: var(--shadow);
+    background-color: rgb(255, 255, 255, 0.2);
+    position: relative;
     width: 100%;
     line-height: 1.8;
     border-radius: 0 10px 0 10px;
+    right: -60vw;
+  }
+  .subClose {
+    opacity: 0;
+  }
+  .subOpen {
+    opacity: 1;
   }
   .submenu p {
     font-size: var(--nav-text);
@@ -208,6 +213,7 @@
   }
 }
 
+//Larger screens
 @media only screen and (min-width: 1350px) {
   .form-group label {
     color: var(--nav-font);
@@ -216,30 +222,37 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .mainmenu {
-    display: flex;
-    align-items: center;
-    position: relative;
-    left: 6vw !important;
-  }
-  .nav-menu {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    height: var(--nav-bar-height);
-    z-index: 100 !important;
-  }
-  #service-btn {
-    position: relative;
-    z-index: 300;
-  }
-  .submenu {
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    text-align: start;
-    box-shadow: var(--shadow);
-    border-radius: 0 0px 10px 10px;
+    .mainmenu {
+      display: flex;
+      align-items: center;
+      position: relative;
+      left: 6vw !important;
+    }
+    .nav-menu {
+      display: flex;
+      flex-direction: row;
+      height: var(--nav-bar-height);
+      z-index: 100 !important;
+    }
+    #service-btn {
+      position: relative;
+      z-index: 300;
+    }
+    .submenu {
+      background-color: var(--secondary-color);
+      position: relative;
+      top: 30px;
+      border-radius: 10px;
+      height: fit-content;
+      text-align: start;
+      border-radius: 0 0px 10px 10px;
+    }
+    .subClose {
+      opacity: 0;
+    }
+    .subOpen {
+      opacity: 1;
+    }
   }
   #submissionPopup {
     position: fixed !important;
@@ -248,9 +261,9 @@
     background-color: var(--secondary-color);
     width: 35vw;
     text-align: center;
-  }
-  #submission-box ::placeholder {
-    visibility: hidden !important;
+    #submission-box ::placeholder {
+      visibility: hidden !important;
+    }
   }
   .popup-box {
     border-radius: 10px 10px 10px 10px !important;

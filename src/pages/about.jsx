@@ -1,16 +1,17 @@
 import React from "react";
 
 import { splash } from "../assets/images";
-import "../assets/css/menu.css";
+import "../assets/scss/about.scss";
 
 const About = () => {
   return (
     <>
       <div id="about" className="page-container">
-        <div id="one">
+        {/* <div id="one">
           <img src={splash} alt="" />
           <h1>Miraculous Carpet Care</h1>
-        </div>
+        </div> */}
+
         <div className="text-container" id="two">
           <h1>Ask dan if there is anything he would like to put here</h1>
           <div>

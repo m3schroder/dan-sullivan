@@ -3,7 +3,7 @@ import React from "react";
 import PopUp from "./common/popUp";
 import CloseButton from "./common/closeButton";
 
-import "../assets/css/navbar.css";
+import "../assets/scss/navbar.scss";
 
 const PhonePopup = ({ open, popUpId, toggle }) => {
   return (

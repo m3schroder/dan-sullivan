@@ -5,7 +5,7 @@ import NavBar from "./components/navbar";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 import Gallery from "./pages/gallery";
-import "./App.css";
+import "./App.scss";
 import About from "./pages/about";
 import Carpet from "./pages/carpet";
 import Rug from "./pages/rug";
@@ -13,10 +13,12 @@ import Upholstery from "./pages/upholstery";
 import Tile from "./pages/tile";
 import Stain from "./pages/stain";
 import Commercial from "./pages/commercial";
+import SubmissionForm from "./components/submissionForm";
 
 class App extends Component {
   state = {
     currentPage: "Home",
+    formOpen: false,
   };
 
   handle = {
@@ -24,13 +26,14 @@ class App extends Component {
       console.log("Selected");
       this.setState({ currentPage: path });
     },
+    onToggle: () => {
+      this.setState({ formOpen: !this.state.formOpen });
+    },
   };
 
   render() {
     const links = [
       { path: "/", text: "Home" },
-      { path: "/about", text: "About Us" },
-      { path: "/gallery", text: "Gallery" },
       { path: "/carpet", text: "Carpet Cleaning", submenu: true },
       { path: "/rug", text: "Area Rug Cleaning", submenu: true },
       { path: "/upholstery", text: "Upholstery Cleaning", submenu: true },
@@ -41,10 +44,17 @@ class App extends Component {
         text: "Commercial Carpets",
         submenu: true,
       },
+      { path: "/about", text: "About Us" },
+      { path: "/gallery", text: "Gallery" },
     ];
 
     return (
       <>
+        <SubmissionForm
+          open={this.state.formOpen}
+          toggle={this.handle.onToggle}
+          popUpId="submissionPopup-home"
+        />
         <NavBar
           links={links}
           onSelect={this.handle.onSelect}
@@ -52,7 +62,9 @@ class App extends Component {
         />
         <main className="container-fluid main-area">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact>
+              <Home toggleForm={this.handle.onToggle} />
+            </Route>
             <Route path="/about" exact component={About} />
             <Route path="/gallery" exact component={Gallery} />
             <Route path="/carpet" exact component={Carpet} />

@@ -8,7 +8,7 @@ import Form from "./common/form";
 
 import createContactCard from "../utils/createContact";
 
-import "../assets/css/navbar.css";
+import "../assets/scss/navbar.scss";
 
 class SubmissionForm extends Form {
   state = {

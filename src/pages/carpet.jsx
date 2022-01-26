@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/css/submenu.css";
+import "../assets/scss/submenu.scss";
 
 const Carpet = () => {
   return (

@@ -11,7 +11,7 @@ import Collapse from "./menuCollapse";
 import SubmissionForm from "./submissionForm";
 import PhonePopup from "./phonePopup";
 
-import "../assets/css/navbar.css";
+import "../assets/scss/navbar.scss";
 
 const NavBar = ({ links, onSelect, currentPage }) => {
   //0 is phone  1 is menu   2 is the form
