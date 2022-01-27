@@ -13,7 +13,6 @@ import Upholstery from "./pages/upholstery";
 import Tile from "./pages/tile";
 import Stain from "./pages/stain";
 import Commercial from "./pages/commercial";
-import SubmissionForm from "./components/submissionForm";
 
 class App extends Component {
   state = {
@@ -26,8 +25,9 @@ class App extends Component {
       console.log("Selected");
       this.setState({ currentPage: path });
     },
-    onToggle: () => {
-      this.setState({ formOpen: !this.state.formOpen });
+    onToggle: (tog = null) => {
+      if (tog !== null) this.setState({ formOpen: tog });
+      else this.setState({ formOpen: !this.state.formOpen });
     },
   };
 
@@ -50,22 +50,21 @@ class App extends Component {
 
     return (
       <>
-        <SubmissionForm
-          open={this.state.formOpen}
-          toggle={this.handle.onToggle}
-          popUpId="submissionPopup-home"
-        />
         <NavBar
           links={links}
           onSelect={this.handle.onSelect}
+          onToggle={this.handle.onToggle}
           currentPage={this.state.currentPage}
+          formOpen={this.state.formOpen}
         />
         <main className="container-fluid main-area">
           <Switch>
             <Route path="/" exact>
               <Home toggleForm={this.handle.onToggle} />
             </Route>
-            <Route path="/about" exact component={About} />
+            <Route path="/about" exact>
+              <About toggleForm={this.handle.onToggle} />
+            </Route>
             <Route path="/gallery" exact component={Gallery} />
             <Route path="/carpet" exact component={Carpet} />
             <Route path="/rug" exact component={Rug} />

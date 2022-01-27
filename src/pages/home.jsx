@@ -8,14 +8,17 @@ const Home = ({ toggleForm }) => {
   return (
     <>
       <div id="home-banner">
-        <button className="btn btn-primary" onClick={() => toggleForm()}>
-          Click me
-        </button>
         <img className="show-mobile" src={logo} alt="" />
         Miraculous Carpet Care
       </div>
       <div id="home" className="page-container">
         <div className="text-container" id="one">
+          <button
+            className="btn btn-primary click-to-hire"
+            onClick={() => toggleForm()}
+          >
+            Click to Schedule!
+          </button>
           <h1>Why Choose Our Carpet Cleaning Service?</h1>
           <div>
             We service areas in and around Franklin, Brentwood, and Spring hill

@@ -13,9 +13,9 @@ import PhonePopup from "./phonePopup";
 
 import "../assets/scss/navbar.scss";
 
-const NavBar = ({ links, onSelect, currentPage }) => {
+const NavBar = ({ links, onSelect, currentPage, onToggle, formOpen }) => {
   //0 is phone  1 is menu   2 is the form
-  const [open, setOpen] = useState([false, false, false]);
+  const [open, setOpen] = useState([false, false, formOpen]);
   const [menuAnimation, setmenuAnimation] = useState("");
   const [phoneAnimation, setPhoneAnimation] = useState("");
   const [formAnimation, setFormAnimation] = useState("");
@@ -40,7 +40,10 @@ const NavBar = ({ links, onSelect, currentPage }) => {
       let temp = [false, false, false];
       for (let x = 0; x < open.length; x++) {
         if (x === toToggle) {
-          temp[x] = !open[x];
+          if (x === 2) {
+            onToggle();
+            temp[x] = !formOpen;
+          } else temp[x] = !open[x];
         }
       }
       setOpen(temp);
@@ -54,6 +57,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
     },
     closeAll: () => {
       setOpen([false, false, false]);
+      onToggle(false);
       if (window.screen.width < 1350) {
         setSubMenuClass("");
       } else setSubMenuClass("subClose");
@@ -65,7 +69,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
   };
   const submenu = {
     toggle: () => {
-      setOpen([false, open[1], false]);
+      setOpen([false, false, false]);
       showSubmenu ? submenu.close() : submenu.open();
       showSubmenu ? submenu.close() : submenu.open();
       setShowSubmenu(!showSubmenu);
@@ -88,7 +92,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
   return (
     <div className="nav-screen">
       {/* Controls background used to close popups */}
-      {anyOpen ? (
+      {anyOpen || formOpen ? (
         <div className="nav-focus" onClick={() => popups.closeAll()} />
       ) : null}
       <Navbar
@@ -104,7 +108,7 @@ const NavBar = ({ links, onSelect, currentPage }) => {
           popUpId="phonePopup"
         />
         <SubmissionForm
-          open={open[2]}
+          open={formOpen}
           toggle={popups.toggle}
           popUpId="submissionPopup"
         />
