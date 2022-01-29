@@ -3,17 +3,20 @@
 
 :root {
   --primary-color: white;
-  --secondary-color: #0e61bb;
+  --secondary-color: white;
 
-  --nav-font: rgb(255, 255, 255, 0.8);
+  --nav-font: rgba(0, 0, 0, 0.5);
+  --nav-font-flip: white;
   --heading-color: rgb(0, 0, 0, 0.8);
   --banner-light: rgb(0, 0, 0, 0.8);
   --banner-dark: rgb(255, 255, 255, 0.8);
+  --navbar-color: white;
+  --icon-color: #474747;
 
   --text-color: rgba(0, 0, 0, 0.8);
-  --nav-bar-height: 7vmax;
-  --nav-text: 1.1rem;
-  --nav-heading: 1.1rem;
+  --nav-bar-height: 6vmax;
+  --nav-text: 1.2rem;
+  --nav-heading: 1.6rem;
 
   --page-text: 1.2em;
   --page-heading: 1.2em;
@@ -101,7 +104,7 @@ code {
   grid-area: six;
 }
 .main-area {
-  padding: 62px 0px 30px 0px !important;
+  padding: 10px 0px 30px 0px !important;
 }
 .clickable {
   cursor: pointer;
@@ -127,6 +130,9 @@ code {
   position: absolute;
   padding: 10px;
   right: 0;
+}
+svg {
+  cursor: pointer;
 }
 .hidden {
   display: none !important;
@@ -181,6 +187,9 @@ code {
 }
 @media only screen and (min-width: 1350px) {
   :root {
+    --nav-font: white !important;
+    --nav-font-flip: rgba(0, 0, 0, 0.5) !important;
     --nav-bar-height: 3vmax;
+    --shadow-bottom: 0px 0px 4px rgba(0, 0, 0, 0.2);
   }
 }

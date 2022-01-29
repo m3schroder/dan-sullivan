@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { logo } from "../assets/images/index";
 import "../assets/scss/homepage.scss";
@@ -7,10 +7,10 @@ import { splash, carpetCleaning } from "../assets/images/index";
 const Home = ({ toggleForm }) => {
   return (
     <>
-      <div id="home-banner">
+      {/* <div id="home-banner">
         <img className="show-mobile" src={logo} alt="" />
         Miraculous Carpet Care
-      </div>
+      </div> */}
       <div id="home" className="page-container">
         <div className="text-container" id="one">
           <button

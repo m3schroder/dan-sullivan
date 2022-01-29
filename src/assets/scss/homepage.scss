@@ -1,5 +1,4 @@
 #home {
-  margin-top: 30px;
   grid-template-areas:
     /* "banner banner" */
     "two one"
@@ -10,6 +9,11 @@
   }
   #four {
     padding: 50px;
+  }
+  #one {
+    button {
+      width: fit-content;
+    }
   }
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import Joi from "joi-browser";
 import emailjs from "emailjs-com";
 
-import CloseButton from "./common/closeButton";
+import { CgClose } from "react-icons/cg";
 import PopUp from "./common/popUp";
 import Form from "./common/form";
 
@@ -134,7 +134,9 @@ class SubmissionForm extends Form {
     const { open, popUpId, toggle, errDropdown } = this.props;
     return (
       <PopUp open={open} className="popup-box" id={popUpId}>
-        <CloseButton onClose={toggle} />
+        <div onClick={() => toggle()} className="close-btn clickable">
+          <CgClose color="white" size={"20px"} />
+        </div>
         <div style={{ padding: "5%" }}>
           <form onSubmit={this.doSubmit}>
             <div id="submission-box">

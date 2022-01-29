@@ -20,30 +20,30 @@ const MenuCollapse = ({
       <Nav activeKey={currentPage} className={"nav-menu"}>
         <div className={"mainmenu " + menuClass}>
           {links.map((link) => {
-            if (link.submenu) {
-              submenuItems.push(link);
-              return null;
-            } else {
-              return (
-                <li key={link.text} className="nav-item">
-                  <Nav.Link
-                    as={Link}
-                    id={link.id}
-                    eventKey={link.path}
-                    onClick={() => {
-                      onSelect(link.path);
-                    }}
-                    className={link.style}
-                    to={link.path}
-                  >
-                    <p>{link.text}</p>
-                  </Nav.Link>
-                </li>
-              );
-            }
+            // if (link.submenu) {
+            //   submenuItems.push(link);
+            //   return null;
+            // } else {
+            return (
+              <li key={link.text} className="nav-item">
+                <Nav.Link
+                  as={Link}
+                  id={link.id}
+                  eventKey={link.path}
+                  onClick={() => {
+                    onSelect(link.path);
+                  }}
+                  className={link.style}
+                  to={link.path}
+                >
+                  <p>{link.text}</p>
+                </Nav.Link>
+              </li>
+            );
+            // }
           })}
 
-          <li
+          {/* <li
             id="service-btn"
             onMouseDown={() => toggleSubmenu()}
             onMouseEnter={() => openSub()}
@@ -70,7 +70,7 @@ const MenuCollapse = ({
                 <p>{subitem.text}</p>
               </Nav.Link>
             </li>
-          ))}
+          ))} */}
         </div>
       </Nav>
     </Navbar.Collapse>

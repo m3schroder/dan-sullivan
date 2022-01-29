@@ -13,6 +13,7 @@ import Upholstery from "./pages/upholstery";
 import Tile from "./pages/tile";
 import Stain from "./pages/stain";
 import Commercial from "./pages/commercial";
+import Services from "./pages/services";
 
 class App extends Component {
   state = {
@@ -34,18 +35,19 @@ class App extends Component {
   render() {
     const links = [
       { path: "/", text: "Home" },
-      { path: "/carpet", text: "Carpet Cleaning", submenu: true },
-      { path: "/rug", text: "Area Rug Cleaning", submenu: true },
-      { path: "/upholstery", text: "Upholstery Cleaning", submenu: true },
-      { path: "/tile", text: "Tile Cleaning", submenu: true },
-      { path: "/stain", text: "Stain Removal", submenu: true },
-      {
-        path: "/commercial",
-        text: "Commercial Carpets",
-        submenu: true,
-      },
+      // { path: "/carpet", text: "Carpet Cleaning", submenu: true },
+      // { path: "/rug", text: "Area Rug Cleaning", submenu: true },
+      // { path: "/upholstery", text: "Upholstery Cleaning", submenu: true },
+      // { path: "/tile", text: "Tile Cleaning", submenu: true },
+      // { path: "/stain", text: "Stain Removal", submenu: true },
+      // {
+      //   path: "/commercial",
+      //   text: "Commercial Carpets",
+      //   submenu: true,
+      // },
       { path: "/about", text: "About Us" },
       { path: "/gallery", text: "Gallery" },
+      { path: "/services", text: "Services" },
     ];
 
     return (
@@ -72,6 +74,7 @@ class App extends Component {
             <Route path="/tile" exact component={Tile} />
             <Route path="/stain" exact component={Stain} />
             <Route path="/commercial" exact component={Commercial} />
+            <Route path="/services" exact component={Services} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/" />
             <Redirect from="/home" exact to="/" />

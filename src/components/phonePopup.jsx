@@ -15,7 +15,7 @@ const PhonePopup = ({ open, popUpId, toggle }) => {
           <a className="btn btn-primary" href="tel:6159056292">
             Yes
           </a>
-          <button className="btn btn-danger" onClick={toggle}>
+          <button className="btn btn-secondary" onClick={toggle}>
             No
           </button>
         </div>
