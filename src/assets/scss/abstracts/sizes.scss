@@ -1,0 +1,24 @@
+:root {
+  --nav-bar-height: 6vmax;
+}
+
+$mobile-nav-size: 1.3rem;
+$desktop-nav-size: 1.6rem;
+
+$page-text: 1.2em;
+$page-heading: 1.2em;
+$page-padding: 0px;
+
+@media only screen and (max-width: 1350px) {
+  $page-padding: 5vh 3vw 0 3vw;
+}
+@media only screen and (min-width: 650px) and (max-width: 1350px) {
+  :root {
+    --nav-bar-height: 4.5vmax;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  :root {
+    --nav-bar-height: 3vmax;
+  }
+}

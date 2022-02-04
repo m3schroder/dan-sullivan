@@ -1,6 +1,6 @@
 import React from "react";
 
-import { logo } from "../assets/images/index";
+// import { logo } from "../assets/images/index";
 import "../assets/scss/homepage.scss";
 import { splash, carpetCleaning } from "../assets/images/index";
 
@@ -12,6 +12,7 @@ const Home = ({ toggleForm }) => {
         Miraculous Carpet Care
       </div> */}
       <div id="home" className="page-container">
+        {/* <div id="home"> */}
         <div className="text-container" id="one">
           <button
             className="btn btn-primary click-to-hire"
@@ -33,7 +34,7 @@ const Home = ({ toggleForm }) => {
             request) to keep your carpet looking clean!
           </div>
         </div>
-        <div id="two">
+        <div id="two" class="img-div">
           <img
             src={splash}
             alt="Captivating shot of the best carpet cleaner in middle TN"
@@ -54,18 +55,22 @@ const Home = ({ toggleForm }) => {
             is our top priority! We're educated, well spoken, and ready to work.
             ​Hire the best carpet cleaning service in the Williamson County area
             today!
-            <div className="line-break" /> Call us at
-            <a href="tel:6159056292">
-              <strong style={{ fontSize: ".9em" }}> 615-905-6292 </strong>
-            </a>
-            or click
-            <strong> here</strong> to schedule!
+            <article>
+              {" "}
+              Call us at
+              <a href="tel:6159056292">
+                <strong style={{ fontSize: ".9em" }}> 615-905-6292 </strong>
+              </a>
+              or click
+              <strong> here</strong> to schedule!
+            </article>
           </div>
         </div>
-        <div id="four">
+        <div id="four" class="img-div">
           <img src={carpetCleaning} alt="Stock cleaning"></img>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };

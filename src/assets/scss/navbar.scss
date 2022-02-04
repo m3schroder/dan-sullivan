@@ -1,3 +1,6 @@
+@import "../scss/abstracts/colors.scss";
+@import "../scss/abstracts/sizes.scss";
+
 .nav-focus {
   position: fixed;
   top: 0;
@@ -15,32 +18,22 @@
     justify-content: space-around;
     align-content: center;
     box-shadow: black;
-    // background: var(--navbar-color);
     height: var(--nav-bar-height);
 
     .navbar-toggler {
       border: 0px !important;
     }
-    .nav-logo {
-      img {
-        height: calc(var(--nav-bar-height) * 0.7) !important;
-        width: calc(var(--nav-bar-height) * 0.7) !important;
-        padding: 1px;
-        background-color: white;
-        border-radius: 50%;
-      }
-      .logo-container {
-        display: flex;
-        h4 {
-          display: none;
-        }
+    .logo-container {
+      display: flex;
+      h4 {
+        display: none;
       }
     }
 
     .nav-menu {
       p,
       a {
-        font-size: var(--nav-heading);
+        font-size: $mobile-nav-size;
         margin: 0 10px 0 10px;
       }
       li {
@@ -50,38 +43,29 @@
         text-align: center;
       }
       .nav-link {
-        color: var(--nav-font);
-      }
-      #service-btn {
-        cursor: pointer;
-        font-size: var(--nav-heading);
-        margin: 0 10px 0 10px;
-        color: rgb(0, 0, 0, 0.5);
-      }
-      #service-btn:active {
-        color: white;
+        color: $mobile-font-color;
       }
     }
     .icon {
-      color: var(--icon-color) !important;
-      height: calc(var(--nav-bar-height) * 0.7) !important;
-      width: calc(var(--nav-bar-height) * 0.7) !important;
+      color: $icon-color !important;
+      height: calc(var(--nav-bar-height) * 0.6) !important;
+      width: calc(var(--nav-bar-height) * 0.6) !important;
     }
   }
 
   #phonePopup {
-    color: var(--nav-font);
+    color: $mobile-font-color;
     position: fixed !important;
     bottom: var(--nav-bar-height) !important;
-    background-color: var(--secondary-color);
-    box-shadow: var(--shadow-top);
+    background-color: $primary-color;
+    box-shadow: $shadow-top;
     width: 100vw;
     text-align: center;
     border-radius: 10px 10px 0 0 !important;
     position: relative;
     h1 {
-      font-size: var(--nav-heading);
-      color: var(--nav-font);
+      font-size: $mobile-nav-size;
+      color: $mobile-font-color;
     }
     #phone-box {
       display: flex;
@@ -90,30 +74,30 @@
     }
   }
   #submissionPopup {
-    box-shadow: var(--shadow-top);
+    box-shadow: $shadow-top;
     #submission-box {
       display: grid;
-      font-size: var(--nav-text) !important;
+      font-size: $mobile-nav-size !important;
       grid-template-columns: 1fr 1fr;
       padding: 0px 20px 20px 20px;
       text-align: left;
       column-gap: 5px;
 
       label {
-        color: var(--nav-font);
+        color: $mobile-font-color;
         font-weight: 500;
       }
       input {
         font-size: 0.9rem;
         border-radius: 15px;
-        box-shadow: var(--shadow-bottom);
+        box-shadow: $shadow-bottom;
       }
     }
   }
 
   .form-submit-btn {
     width: 30%;
-    font-size: var(--nav-font);
+    font-size: $mobile-nav-size;
   }
   .form-error {
     padding: 6px;
@@ -130,14 +114,14 @@
       height: var(--nav-bar-height);
       width: 100vw;
       box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.4);
-      background: var(--navbar-color);
+      background: $navbar-color;
     }
     /* Trying to fix navbar */
     .nav-collapse {
       position: fixed !important;
       bottom: var(--nav-bar-height) !important;
-      background-color: var(--secondary-color);
-      box-shadow: var(--shadow-top);
+      background-color: $secondary-color;
+      box-shadow: $shadow-top;
       border-radius: 10px 10px 0 0;
       width: 100vw;
       text-align: center;
@@ -164,28 +148,11 @@
         flex-direction: column;
         justify-content: center;
       }
-      .submenu {
-        background-color: #78787820;
-        position: relative;
-        width: 100%;
-        line-height: 1.8;
-        border-radius: 0 10px 0 10px;
-        p,
-        a {
-          font-size: var(--nav-text) !important;
-        }
-      }
-    }
-    .subClose {
-      opacity: 0;
-    }
-    .subOpen {
-      opacity: 1;
     }
     #submissionPopup {
       position: fixed !important;
       bottom: var(--nav-bar-height) !important;
-      background-color: var(--secondary-color);
+      background-color: $secondary-color;
       width: 100vw;
       text-align: center;
       border-radius: 10px 10px 0 0 !important;
@@ -227,40 +194,45 @@
 
 //Larger screens
 @media only screen and (min-width: 1350px) {
+  .navbar {
+    height: fit-content !important;
+  }
   .nav-link {
     display: flex;
     width: 120px;
     justify-content: center;
     align-items: center;
     padding: 3px;
-    color: var(--nav-font-flip) !important;
+    color: $desktop-font-color !important;
   }
   .nav-link::after {
     position: absolute;
-    bottom: 4px;
+    bottom: 0.3em;
     max-width: 0px;
     content: "";
     transition: max-width 300ms;
     border: 1px solid transparent !important;
   }
-  #service-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    color: var(--nav-font-flip) !important;
-    padding: 3px !important;
-  }
-  .nav-logo {
-    background: none;
-    border-bottom: none;
+  .logo-container {
+    // display: inline !important;
+    // position: absolute;
+    cursor: pointer;
+    // left: 0;
+    // top: 0;
+    border-left: 2px solid $lineColor;
+    padding-left: 3px;
+    // margin: 20px;
+    // margin-top: 10px;
+    height: 90px !important;
+    width: 150px !important;
     h4 {
-      color: var(--icon-color) !important;
-    }
-  }
-  .submenu {
-    .nav-link {
-      width: fit-content !important;
+      margin: 0px !important;
+      font-size: 1.4rem !important;
+      color: $icon-color !important;
+      display: inline-block !important;
+      position: absolute;
+      margin-top: 5px;
+      margin-left: 3%;
     }
   }
   .active::after {
@@ -268,10 +240,8 @@
     width: 70%;
     max-width: 100px;
     content: "";
-    border: 1px solid rgba(0, 0, 0, 0.8) !important;
-  }
-  .form-group label {
-    color: var(--nav-font);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid $lineColor !important;
   }
   #nav-screen {
     z-index: 100 !important;
@@ -291,56 +261,27 @@
           display: flex;
           align-items: center;
           position: relative;
+          left: -50px;
           p,
           li {
             font-size: 1.2rem !important;
             font-family: Arial, Helvetica, sans-serif;
           }
         }
-
-        #service-btn {
-          position: relative;
-          z-index: 300;
-        }
-        .submenu {
-          background-color: white;
-          position: relative;
-          top: var(--nav-bar-height);
-          border-radius: 10px;
-          height: fit-content;
-          text-align: start;
-          border-radius: 0px 0px 10px 10px;
-          box-shadow: var(--shadow-bottom);
-          p {
-            width: 100% !important;
-            font-size: 1.1rem !important;
-          }
-        }
       }
     }
-    .logo-container {
-      gap: 10px;
-      align-items: center;
-      h4 {
-        display: inline-block !important;
-        position: absolute;
-        margin-top: 5px;
-        margin-left: 3%;
-        font-size: 1.2rem;
-        color: var(--nav-font);
-      }
-    }
-
     #submissionPopup {
       position: fixed !important;
       top: 25vh;
       margin: auto;
-      background-color: var(--secondary-color);
-      color: var(--nav-font-flip) !important;
+      background-color: $secondary-color;
       width: 35vw;
       text-align: center;
       #submission-box ::placeholder {
         visibility: hidden !important;
+      }
+      .form-group label {
+        color: $desktop-font-color !important;
       }
     }
     .popup-box {
@@ -348,6 +289,8 @@
     }
     .icon {
       margin-right: 10px;
+      width: 10px !important;
+      height: 10px !important;
     }
   }
 }

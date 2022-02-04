@@ -122,12 +122,17 @@ const NavBar = ({ links, onSelect, currentPage, onToggle, formOpen }) => {
             onSelect("Home");
             popups.closeAll();
           }}
-          className="nav-logo hide-mobile"
+          className="hide-mobile"
           to={"/"}
         >
           <div class="logo-container">
-            <img src={logo} alt="awesome logo"></img>
-            <h4>615-905-6292</h4>
+            <h4>
+              Miraculous
+              <br />
+              Carpet
+              <br />
+              Care
+            </h4>
           </div>
         </Nav.Link>
         {/* Toggle phone when visible */}

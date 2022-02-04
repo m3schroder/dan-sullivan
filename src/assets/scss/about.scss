@@ -1,4 +1,6 @@
+@import "../scss/abstracts/mixins.scss";
 #about {
+  @include page-container;
   grid-template-rows: min-content;
   grid-template-areas: "two";
   #one {

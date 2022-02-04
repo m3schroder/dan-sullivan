@@ -1,34 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
-@import "./assets/scss/animation.scss";
-
-:root {
-  --primary-color: white;
-  --secondary-color: white;
-
-  --nav-font: rgba(0, 0, 0, 0.5);
-  --nav-font-flip: white;
-  --heading-color: rgb(0, 0, 0, 0.8);
-  --banner-light: rgb(0, 0, 0, 0.8);
-  --banner-dark: rgb(255, 255, 255, 0.8);
-  --navbar-color: white;
-  --icon-color: #474747;
-
-  --text-color: rgba(0, 0, 0, 0.8);
-  --nav-bar-height: 6vmax;
-  --nav-text: 1.2rem;
-  --nav-heading: 1.6rem;
-
-  --page-text: 1.2em;
-  --page-heading: 1.2em;
-  --page-padding: 4vh 15vw 5vh 15vw;
-
-  --sub-closed-height: -25rem;
-  --sub-opened-height: 3rem;
-
-  --shadow: 0px 1px 9px rgba(0, 0, 0, 0.233);
-  --shadow-top: 0px -20px 20px rgba(0, 0, 0, 0.1);
-  --shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.2);
-}
+@import "./assets/scss/abstracts/animation.scss";
+@import "./assets/scss/abstracts/colors.scss";
+@import "./assets/scss/abstracts/sizes.scss";
 
 body {
   margin: 0;
@@ -38,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-color) !important;
+  background-color: $primary-color !important;
 }
 
 code {
@@ -54,37 +27,6 @@ code {
   display: none;
 }
 
-/* Normal page styles */
-.page-container {
-  padding: var(--page-padding);
-  display: grid;
-  grid-row-gap: 3vh;
-  justify-items: center;
-  align-items: center;
-}
-.page-container img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-}
-.text-container {
-  text-align: left;
-  padding: 20px;
-  white-space: pre-wrap;
-}
-.text-container h1 {
-  color: var(--heading-color);
-  font-family: "Montserrat";
-  font-size: var(--page-heading);
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-.text-container div {
-  font-size: var(--page-text);
-  color: var(--text-color);
-  line-height: 1.7em;
-  font-weight: 500;
-}
 #one {
   grid-area: one;
 }
@@ -104,25 +46,12 @@ code {
   grid-area: six;
 }
 .main-area {
-  padding: 10px 0px 30px 0px !important;
+  padding: 10px 0px 0px 0px !important;
 }
 .clickable {
   cursor: pointer;
 }
-.center {
-  display: flex;
-  margin-top: 10%;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  flex-direction: column;
-}
-.line-break {
-  margin-top: 25px;
-}
-.hide-mobile {
-  display: block !important;
-}
+
 .show-mobile {
   display: none !important;
 }
@@ -142,14 +71,11 @@ svg {
 }
 .btn {
   width: 26%;
-  font-size: var(--nav-font);
+  font-size: $mobile-nav-size;
   border-radius: 35px !important;
 }
 
 @media only screen and (max-width: 1350px) {
-  :root {
-    --page-padding: 5vh 3vw 0 3vw;
-  }
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
@@ -166,7 +92,7 @@ svg {
     padding: 30px;
   }
   .text-container h1 {
-    color: var(--heading-color);
+    color: $heading-color;
     font-family: "Montserrat";
     font-size: 1em;
     font-weight: 600;
@@ -175,21 +101,24 @@ svg {
   }
   .text-container div {
     font-size: 0.6em !important;
-    color: var(--text-color);
+    color: $text-color;
     text-align: left;
     line-height: 1.8em;
   }
 }
-@media only screen and (min-width: 650px) and (max-width: 1350px) {
-  :root {
-    --nav-bar-height: 4.5vmax;
-  }
-}
 @media only screen and (min-width: 1350px) {
-  :root {
-    --nav-font: white !important;
-    --nav-font-flip: rgba(0, 0, 0, 0.5) !important;
-    --nav-bar-height: 3vmax;
-    --shadow-bottom: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  .main-footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    height: min-content;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    a {
+      padding: 10px !important;
+      color: white !important;
+    }
   }
 }

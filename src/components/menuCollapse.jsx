@@ -14,7 +14,7 @@ const MenuCollapse = ({
   links,
   onSelect,
 }) => {
-  let submenuItems = [];
+  // let submenuItems = [];
   return (
     <Navbar.Collapse className="nav-collapse popup-box">
       <Nav activeKey={currentPage} className={"nav-menu"}>

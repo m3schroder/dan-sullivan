@@ -5,7 +5,6 @@ import NavBar from "./components/navbar";
 import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 import Gallery from "./pages/gallery";
-import "./App.scss";
 import About from "./pages/about";
 import Carpet from "./pages/carpet";
 import Rug from "./pages/rug";
@@ -14,6 +13,7 @@ import Tile from "./pages/tile";
 import Stain from "./pages/stain";
 import Commercial from "./pages/commercial";
 import Services from "./pages/services";
+import MediaLinks from "./components/mediaLinks";
 
 class App extends Component {
   state = {
@@ -81,6 +81,9 @@ class App extends Component {
             <Redirect to="/not-found" />
           </Switch>
         </main>
+        <footer className="main-footer">
+          <MediaLinks />
+        </footer>
       </>
     );
   }
