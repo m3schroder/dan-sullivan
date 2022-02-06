@@ -74,7 +74,7 @@ const Carpet = () => {
             ​Hire the best carpet cleaning service in the Williamson County area
             today!
             <div className="line-break" /> Call us at
-            <a href="tel:6159056292">
+            <a href="6159056292">
               <strong style={{ fontSize: ".9em" }}> 615-905-6292 </strong>
             </a>
             or click
