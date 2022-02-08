@@ -135,20 +135,18 @@ class SubmissionForm extends Form {
     return (
       <PopUp open={open} className="popup-box" id={popUpId}>
         <div onClick={() => toggle()} className="close-btn clickable">
-          <CgClose color="white" size={"20px"} />
+          <CgClose color="gray" size={"20px"} />
         </div>
-        <div style={{ padding: "5%" }}>
-          <form onSubmit={this.doSubmit}>
-            <div id="submission-box">
-              {this.inputs.map(({ name, label, type, required }) => (
-                <div key={name} id={name}>
-                  {this.renderInput(name, label, type, required, errDropdown)}
-                </div>
-              ))}
-            </div>
-            {this.renderButton("Submit", toggle)}
-          </form>
-        </div>
+        <form onSubmit={this.doSubmit}>
+          <div id="submission-box">
+            {this.inputs.map(({ name, label, type, required }) => (
+              <div key={name} id={name}>
+                {this.renderInput(name, label, type, required, errDropdown)}
+              </div>
+            ))}
+          </div>
+          {this.renderButton("Submit", toggle)}
+        </form>
       </PopUp>
     );
   }

@@ -1,2 +1,35 @@
 @import "../scss/abstracts/mixins.scss";
-@include page-container;
+@import "../scss/abstracts/sizes.scss";
+@import "../scss/abstracts/colors.scss";
+#services {
+  @include page-container;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px;
+  flex-direction: row;
+
+  .text-container {
+    box-shadow: $shadow-bottom;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  #services {
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 3vh;
+    .text-container {
+      text-align: center;
+      width: 100% !important;
+      div {
+        text-align: left !important;
+      }
+    }
+  }
+}

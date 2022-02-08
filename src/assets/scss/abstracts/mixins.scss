@@ -46,7 +46,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    padding: 0px 15vw;
+    padding: 0px 20vw;
     div {
       display: flex;
       flex-direction: column;
@@ -59,20 +59,22 @@
       box-shadow: $shadow;
     }
     .text-container {
-      text-align: left;
       padding: 20px;
+      display: flex;
+      align-items: flex-start;
       white-space: pre-wrap;
       h1 {
+        text-align: start;
         color: $heading-color;
         font-family: "Montserrat";
         font-size: $page-heading;
-        font-weight: 600;
-        margin-bottom: 15px;
+        font-weight: 700;
+        margin-bottom: 20px;
       }
       div {
         font-size: $page-text;
         color: $text-color;
-        line-height: 1.7em;
+        line-height: 2.3em;
         font-weight: 500;
       }
     }

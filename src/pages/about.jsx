@@ -6,7 +6,7 @@ import "../assets/scss/about.scss";
 const About = () => {
   return (
     <>
-      <div id="about" className="page-container">
+      <div id="about">
         {/* <div id="one">
           <img src={splash} alt="" />
           <h1>Miraculous Carpet Care</h1>

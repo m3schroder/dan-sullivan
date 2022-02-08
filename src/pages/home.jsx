@@ -3,36 +3,25 @@ import React from "react";
 // import { logo } from "../assets/images/index";
 import "../assets/scss/homepage.scss";
 import { splash, carpetCleaning } from "../assets/images/index";
+import ClickToHire from "../components/ClickToHire";
 
 const Home = ({ toggleForm }) => {
   return (
     <>
-      {/* <div id="home-banner">
-        <img className="show-mobile" src={logo} alt="" />
-        Miraculous Carpet Care
-      </div> */}
-      <div id="home" className="page-container">
+      <div id="home">
         {/* <div id="home"> */}
         <div className="text-container" id="one">
-          <button
-            className="btn btn-primary click-to-hire"
-            onClick={() => toggleForm()}
-          >
-            Click to Schedule!
-          </button>
-          <h1>Why Choose Our Carpet Cleaning Service?</h1>
+          <h1>Why Choose Us?</h1>
           <div>
-            We service areas in and around Franklin, Brentwood, and Spring hill
-            and are committed to your flooring needs. Whether your a health
-            coach, house cleaner, or dog trainer, our carpet cleaning experts
-            are sure to impress!
-            <div className="line-break" />
-            We go above and beyond your normal carpet cleaner! Our carpet
-            technicians utilize state of the art cleaning supplies and
-            specialize in making old carpet look new again. Our professional
-            carpet stain detergent spray is used as a protective barrier (on
-            request) to keep your carpet looking clean!
+            Miraculous Carpet Care is here to meet your cleaning needs. From
+            general carpet cleaning to rugs, tile, and even upholstery, our goal
+            is to make a noticeable difference that you can be proud of. As a
+            company we value our quality and your satisfaction above all else.{" "}
+            <br />
+            Our carpet technicians utilize state of the art cleaning supplies
+            and specialize in making old carpet look new again.
           </div>
+          <ClickToHire toggleForm={toggleForm} />
         </div>
         <div id="two" class="img-div">
           <img
@@ -42,7 +31,7 @@ const Home = ({ toggleForm }) => {
         </div>
 
         <div className="text-container" id="three">
-          <h1>Carpet Cleaning in Williamson County</h1>
+          <h1>How we do it</h1>
           <div>
             Our carpet cleaning specialist enjoys giving you the cleanest floors
             and scheduling has never been easier. Once we set up your

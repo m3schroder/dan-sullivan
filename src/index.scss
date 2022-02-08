@@ -59,6 +59,7 @@ code {
   position: absolute;
   padding: 10px;
   right: 0;
+  top: 0px;
 }
 svg {
   cursor: pointer;
@@ -81,32 +82,20 @@ svg {
     align-items: center;
     z-index: 1;
   }
+  .click-to-hire {
+    margin: 60px 0px;
+  }
   .hide-mobile {
     display: none !important;
   }
   .show-mobile {
     display: block !important;
   }
-  .text-container {
-    text-align: center;
-    padding: 30px;
-  }
-  .text-container h1 {
-    color: $heading-color;
-    font-family: "Montserrat";
-    font-size: 1em;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  .text-container div {
-    font-size: 0.6em !important;
-    color: $text-color;
-    text-align: left;
-    line-height: 1.8em;
-  }
 }
 @media only screen and (min-width: 1350px) {
+  .click-to-hire {
+    margin: 15px 0px;
+  }
   .main-footer {
     width: 100%;
     display: flex;
