@@ -1,6 +1,6 @@
 import React from "react";
 
-import { splash } from "../assets/images";
+// import { splash } from "../assets/images";
 import "../assets/scss/about.scss";
 
 const About = () => {

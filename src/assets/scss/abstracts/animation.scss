@@ -22,38 +22,6 @@
     margin-bottom: 0px;
   }
 }
-@keyframes slideLeft {
-  from {
-    left: 0;
-  }
-  to {
-    left: -30vw;
-  }
-}
-@keyframes slideRight {
-  from {
-    left: -30vw;
-  }
-  to {
-    left: 0;
-  }
-}
-@keyframes subslideLeft {
-  from {
-    left: 0;
-  }
-  to {
-    left: -60vw;
-  }
-}
-@keyframes subslideRight {
-  from {
-    left: -60vw;
-  }
-  to {
-    left: 0;
-  }
-}
 @keyframes slideDown {
   from {
     max-height: 0px;
@@ -82,53 +50,12 @@
   .fade {
     animation: fade 0.35s;
   }
-  .subOpen {
-    animation: subslideLeft 0.4s backwards 1;
-    left: -60vw;
-  }
-  .subClose {
-    left: 60vw;
-    max-height: unset;
-    animation: subslideRight 0.4s backwards;
-  }
-  .slideRight {
-    animation: slideRight 0.3s backwards 1;
-  }
-  .slideLeft {
-    animation: slideLeft 0.3s backwards 1;
-    left: -30vw;
-  }
-  .slideUp {
-    animation: slideUp 0.5s backwards;
-    height: 30vh;
-  }
-  .slideDown {
-    animation: slideDown 0.5s backwards;
-    height: 0;
-  }
-
-  .fadeOut {
-    animation: fadeOut 0.4s ease-out;
-  }
-  .fadeIn {
-    animation: fadeIn 0.4s ease-in;
-  }
 }
 
 //Large Screens
 @media only screen and (min-width: 1350px) {
-  .subOpen {
-    animation: slideDown 0.3s forwards;
-    max-height: 50vh;
-    opacity: 1;
-  }
   .navbar {
     animation: slideDown 0.3s forwards;
     max-height: 50vh;
-  }
-  .subClose {
-    animation: slideUp 0.3s backwards;
-    max-height: 0;
-    opacity: 0;
   }
 }

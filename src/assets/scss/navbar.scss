@@ -57,7 +57,6 @@
     position: fixed !important;
     bottom: var(--nav-bar-height) !important;
     background-color: $primary-color;
-    box-shadow: $shadow-top;
     width: 100vw;
     text-align: center;
     border-radius: 10px 10px 0 0 !important;
@@ -73,8 +72,6 @@
     }
   }
   #submissionPopup {
-    padding: 5%;
-    box-shadow: $shadow-top;
     #submission-box {
       display: grid;
       font-size: $mobile-nav-size !important;
@@ -160,6 +157,7 @@
         display: none !important;
       }
       #submission-box {
+        padding: 45px 10px 5px 10px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 5px;
