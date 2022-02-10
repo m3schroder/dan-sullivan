@@ -252,7 +252,7 @@
     .dropdown-menu {
       animation: subSlideDown 250ms ease;
       position: fixed;
-      top: calc(var(--nav-bar-height)+50) !important;
+      top: calc(var(--nav-bar-height) + 50px) !important;
       height: fit-content;
       box-shadow: none;
       background: none;

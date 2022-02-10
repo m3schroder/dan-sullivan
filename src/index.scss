@@ -5,9 +5,7 @@
 body {
   margin: 0;
   padding: 0px 0 0 0;
-  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-  //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  //   sans-serif;
+  background: rgba(200, 200, 200, 0.1) !important;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
@@ -106,9 +104,10 @@ svg {
     color: $lineColor;
     position: fixed;
     right: 3vw;
-    bottom: calc(var(--nav-bar-height)+70px);
+    bottom: calc(var(--nav-bar-height) + 70px);
     font-size: 30px;
   }
+
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
