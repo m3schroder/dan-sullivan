@@ -56,6 +56,9 @@ code {
   padding: 10px 20px 10px 20px !important;
   width: fit-content !important;
 }
+a:hover {
+  text-decoration: none !important;
+}
 
 .button-container {
   display: flex;
@@ -63,6 +66,7 @@ code {
   align-items: center !important;
   justify-content: center !important;
   width: 100%;
+  height: min-content;
   max-width: 100%;
 }
 .btn-primary {
@@ -98,6 +102,13 @@ svg {
 }
 
 @media only screen and (max-width: 1350px) {
+  .scrolltop {
+    color: $lineColor;
+    position: fixed;
+    right: 3vw;
+    bottom: calc(var(--nav-bar-height)+70px);
+    font-size: 30px;
+  }
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
@@ -132,6 +143,13 @@ svg {
   }
 }
 @media only screen and (min-width: 1350px) {
+  .scrolltop {
+    color: $lineColor;
+    position: fixed;
+    right: 49vw;
+    bottom: 10px;
+    font-size: 45px;
+  }
   article {
     font-size: 1.1rem;
   }

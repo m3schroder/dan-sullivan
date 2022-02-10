@@ -135,7 +135,10 @@ const NavBar = ({ links, onSelect, currentPage, onToggle, formOpen }) => {
         </Navbar.Toggle>
         <Collapse
           currentPage={currentPage}
-          onSelect={onSelect}
+          onSelect={(passed) => {
+            popups.closeAll();
+            onSelect(passed);
+          }}
           links={links}
           renderLink={renderLink}
         />

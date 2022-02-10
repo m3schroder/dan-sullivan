@@ -6,20 +6,18 @@
   grid-template-areas:
     "one two"
     "four three";
-  gap: 30px;
+  article {
+    display: inline;
+  }
 }
 #home > div {
   width: 100%;
   height: 100%;
 }
-.callus {
-  display: flex;
-  flex-direction: row !important;
-  margin-top: 25px;
-  strong {
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
+
+strong {
+  cursor: pointer;
+  font-size: 1rem;
 }
 @media only screen and (max-width: 1350px) {
   #home {
@@ -28,12 +26,6 @@
       "two"
       "three"
       "four";
-    .callus {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
     #one {
       justify-content: center !important;
       align-items: center !important;

@@ -1,13 +1,63 @@
 @import "../scss/abstracts/mixins.scss";
 #about {
   @include page-container;
-  display: flex;
-  justify-content: center !important;
-  align-items: center !important;
+  article {
+    box-shadow: $shadow-bottom;
+    padding: 30px;
+    border-radius: 10px;
+    height: 100% !important;
+    background: white !important;
+    h1 {
+      color: $heading-color;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-size: $page-heading;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
 }
 
+.family {
+  grid-area: family !important;
+}
+.starting {
+  grid-area: starting !important;
+}
+.button-container {
+  grid-area: btn;
+  button {
+    margin: 3px !important;
+  }
+}
+.quote {
+  height: fit-content;
+  background: #1850c920;
+  font-size: large;
+  border-radius: 10px;
+  box-shadow: $shadow-bottom;
+  margin-bottom: 70px;
+  padding: 30px;
+  grid-area: quote !important;
+  margin: 30px 0px;
+}
 @media only screen and (min-width: 650px) and (max-width: 1350px) {
 }
 
 @media only screen and (max-width: 1350px) {
+  #about {
+    grid-template-areas:
+      "starting"
+      "quote"
+      "btn"
+      "family";
+  }
+}
+@media only screen and (min-width: 1350px) {
+  #about {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "starting quote"
+      "starting btn"
+      "family family";
+  }
 }

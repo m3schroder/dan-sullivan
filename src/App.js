@@ -6,14 +6,9 @@ import NotFound from "./pages/notFound";
 import Home from "./pages/home";
 import Gallery from "./pages/gallery";
 import About from "./pages/about";
-import Carpet from "./pages/carpet";
-import Rug from "./pages/rug";
-import Upholstery from "./pages/upholstery";
-import Tile from "./pages/tile";
-import Stain from "./pages/stain";
-import Commercial from "./pages/commercial";
 import Services from "./pages/services";
 import MediaLinks from "./components/mediaLinks";
+import ScrollButton from "./components/ScrollToTop";
 
 class App extends Component {
   state = {
@@ -22,9 +17,9 @@ class App extends Component {
   };
 
   handle = {
-    onSelect: (path) => {
-      console.log("Selected");
-      this.setState({ currentPage: path });
+    onSelect: (name) => {
+      console.log(name);
+      this.setState({ currentPage: name });
     },
     onToggle: (tog = null) => {
       if (tog !== null) this.setState({ formOpen: tog });
@@ -35,16 +30,6 @@ class App extends Component {
   render() {
     const links = [
       { path: "/", text: "Home" },
-      // { path: "/carpet", text: "Carpet Cleaning", submenu: true },
-      // { path: "/rug", text: "Area Rug Cleaning", submenu: true },
-      // { path: "/upholstery", text: "Upholstery Cleaning", submenu: true },
-      // { path: "/tile", text: "Tile Cleaning", submenu: true },
-      // { path: "/stain", text: "Stain Removal", submenu: true },
-      // {
-      //   path: "/commercial",
-      //   text: "Commercial Carpets",
-      //   submenu: true,
-      // },
       { path: "/about", text: "About" },
       { path: "/gallery", text: "Gallery" },
       { path: "/services", text: "Services" },
@@ -68,12 +53,7 @@ class App extends Component {
               <About toggleForm={this.handle.onToggle} />
             </Route>
             <Route path="/gallery" exact component={Gallery} />
-            <Route path="/carpet" exact component={Carpet} />
-            <Route path="/rug" exact component={Rug} />
-            <Route path="/upholstery" exact component={Upholstery} />
-            <Route path="/tile" exact component={Tile} />
-            <Route path="/stain" exact component={Stain} />
-            <Route path="/commercial" exact component={Commercial} />
+            <Route path="/services/:service" exact component={Services} />
             <Route path="/services" exact component={Services} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/" />
@@ -84,6 +64,7 @@ class App extends Component {
         <footer className="main-footer">
           <MediaLinks />
         </footer>
+        <ScrollButton />
       </>
     );
   }

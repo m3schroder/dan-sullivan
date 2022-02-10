@@ -1,77 +1,65 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "../assets/scss/navbar.scss";
 
-const MenuCollapse = ({
-  currentPage,
-  menuClass,
-  submenuClass,
-  toggleSubmenu,
-  openSub,
-  closeSub,
-  links,
-  onSelect,
-}) => {
-  // let submenuItems = [];
+const MenuCollapse = ({ currentPage, links, onSelect }) => {
+  let services = [
+    { title: "Carpet Cleaning", path: "carpet" },
+    { title: "Upholstery Cleaning", path: "upholstery" },
+    { title: "Area Rug Cleaning", path: "rug" },
+    { title: "Tile Cleaning", path: "tile" },
+  ];
+  let serviceStyle = currentPage === "Services" ? "nav-link active" : "";
   return (
     <Navbar.Collapse className="nav-collapse popup-box">
       <Nav activeKey={currentPage} className={"nav-menu"}>
-        <div className={"mainmenu " + menuClass}>
-          {links.map((link) => {
-            // if (link.submenu) {
-            //   submenuItems.push(link);
-            //   return null;
-            // } else {
-            return (
-              <li key={link.text} className="nav-item">
-                <Nav.Link
-                  as={Link}
-                  id={link.id}
-                  eventKey={link.path}
-                  onClick={() => {
-                    onSelect(link.path);
-                  }}
-                  className={link.style}
-                  to={link.path}
+        <Dropdown>
+          <div className="mainOptions mainmenu">
+            {links.map((link) => {
+              return link.text === "Services" ? (
+                <Dropdown.Toggle
+                  key={link.text}
+                  class={serviceStyle}
+                  id="service-drop"
                 >
-                  <p>{link.text}</p>
-                </Nav.Link>
-              </li>
-            );
-            // }
-          })}
-
-          {/* <li
-            id="service-btn"
-            onMouseDown={() => toggleSubmenu()}
-            onMouseEnter={() => openSub()}
-          >
-            Services
-          </li>
-        </div>
-        <div
-          onMouseLeave={() => closeSub()}
-          className={"submenu " + submenuClass}
-        >
-          {submenuItems.map((subitem) => (
-            <li key={subitem.text}>
-              <Nav.Link
-                as={Link}
-                id={subitem.id}
-                eventKey={subitem.path}
-                onClick={() => {
-                  onSelect(subitem.path);
-                }}
-                className={subitem.style}
-                to={subitem.path}
-              >
-                <p>{subitem.text}</p>
-              </Nav.Link>
-            </li>
-          ))} */}
-        </div>
+                  {link.text}
+                </Dropdown.Toggle>
+              ) : (
+                <li key={link.text} className="nav-item">
+                  <Nav.Link
+                    as={Link}
+                    id={link.id}
+                    eventKey={link.text}
+                    onClick={() => onSelect(link.text)}
+                    className={link.style}
+                    to={link.path}
+                  >
+                    <p>{link.text}</p>
+                  </Nav.Link>
+                </li>
+              );
+            })}
+          </div>
+          <Dropdown.Menu>
+            <div>
+              {services.map((service) => {
+                return (
+                  <Dropdown.Item
+                    onClick={() => {
+                      onSelect("Services");
+                    }}
+                  >
+                    <Link to={"/services/" + service.path}>
+                      {service.title}
+                    </Link>
+                  </Dropdown.Item>
+                );
+              })}
+            </div>
+          </Dropdown.Menu>
+        </Dropdown>
       </Nav>
     </Navbar.Collapse>
   );
