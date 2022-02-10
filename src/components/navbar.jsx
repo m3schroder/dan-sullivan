@@ -12,6 +12,7 @@ import SubmissionForm from "./submissionForm";
 import PhonePopup from "./phonePopup";
 
 import "../assets/scss/navbar.scss";
+import "../assets/scss/abstracts/animation.scss";
 
 const NavBar = ({ links, onSelect, currentPage, onToggle, formOpen }) => {
   //0 is phone  1 is menu   2 is the form
@@ -122,7 +123,10 @@ const NavBar = ({ links, onSelect, currentPage, onToggle, formOpen }) => {
         >
           {open[1] ? (
             <IoMdClose
-              onClick={() => popups.closeAll()}
+              onClick={() => {
+                setmenuAnimation("fade");
+                popups.closeAll();
+              }}
               className={menuAnimation + " icon"}
             />
           ) : (

@@ -6,24 +6,26 @@
   display: flex !important;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 50px;
+  align-items: center !important;
+  gap: 30px;
   flex-direction: row;
-
+  .generalProcess {
+    width: 100% !important;
+  }
   .text-container {
-    box-shadow: $shadow-bottom;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 45%;
+    article {
+      margin-top: 0px;
+    }
   }
 }
 
 @media only screen and (max-width: 1350px) {
   #services {
-    padding: 2vw;
     display: grid;
     grid-template-columns: 1fr;
-    padding-top: 3vh;
     .text-container {
       text-align: center;
       width: 100% !important;

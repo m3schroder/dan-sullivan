@@ -2,38 +2,59 @@ import React from "react";
 
 // import { splash } from "../assets/images";
 import "../assets/scss/about.scss";
-
-const About = () => {
+import ClickToHire from "../components/ClickToHire";
+const About = ({ toggleForm }) => {
   return (
     <>
       <div id="about">
-        {/* <div id="one">
-          <img src={splash} alt="" />
-          <h1>Miraculous Carpet Care</h1>
-        </div> */}
-
-        <div className="text-container" id="two">
-          <h1>Ask dan if there is anything he would like to put here</h1>
-          <div>
-            Put a little personal touch on the website by having the owner of
-            the company address clients himself
-          </div>
-
-          <h1 className="line-break">
-            Welcome to Franklin's Favorite Carpet Cleaners!
-          </h1>
-          <div>
-            Miraculous Carpet Care is Franklin's go to carpet cleaning service
-            located South of Nashville, Tennessee! We take great pride in
-            offering you the best carpet and floor cleaning solutions around! Be
-            sure to check out our carpet cleaning services page to find out
-            more!
+        <div className="text-container">
+          <article className="">
+            Dan Sullivan is MCC’s founder and main contact for the company. He
+            is a family oriented man having grown up in a family of 12 and his
+            siblings being his best friends. He feels beyond blessed by God for
+            giving him the family that he has, especially his parents for being
+            so loving and supportive throughout his life.
             <div className="line-break" />
-            We go above and beyond your normal carpet cleaner! Our carpet
-            technicians utilize state of the art cleaning supplies and
-            specialize in making old carpet look new again. Our professional
-            carpet stain detergent spray is used as a protective barrier (on
-            request) to keep your carpet looking clean!
+            Dan’s upbringing included a blue-collar working atmosphere in his
+            teens. As he continued working these jobs, he knew he always wanted
+            to own a business. He began carpet cleaning and worked as a tech for
+            4 years and then moved to building homes. After that, he started a
+            job at Halliburton Oil and Gas. During his time at Halliburton, Dan
+            realized that his individual earning potential was greater with a
+            large corporation than it was at any other small businesses as an
+            employee.
+            <div className="line-break" />
+            After 10 years working away from home, Dan’s wonderful wife
+            encouraged him to fulfill his dream of owning his own carpet
+            cleaning business. “I am great at it and I enjoy the satisfaction of
+            showing up at someone’s home and making a fantastic difference for
+            them. I enjoy rolling out the hoses while prepping the job and then
+            packing the truck up and moving on to a new client, sometimes five
+            times in a day! With my wife’s encouragement I sought to purchase
+            the equipment and set up an LLC”. Finally, after 6 months of
+            thinking about it, Dan became a new business owner! Although Dan has
+            owned this company for 3 years and has done all of the work himself
+            during that time, he was able to hire another tech about 6 months
+            ago and it has been a tremendous blessing.
+            <div className="line-break" />
+            Dan lives with his wife, the most impressive person he knows, and
+            their 4 children ages 14, 7, 2, and 1. They live in Franklin,
+            however, he will fulfill jobs in Franklin, Brentwood, and Spring
+            Hill. Thankfully, because of this business, Dan is able to be home
+            every night with his family, which is something he has never been
+            able to do.
+            <div className="line-break" />
+            Dan’s favorite part about his business is that it requires him to
+            put into practice all of the different skills and virtues that will
+            make him the best man he can be. These skills and virtues include
+            integrity, honesty, meticulous attention to detail, honest labor for
+            fair pay, effort, long suffering, and many more. He quotes “I don’t
+            claim to be a master of the skills and virtues but, this job gives
+            me a chance to practice them and I don’t know that anyone could ask
+            for anything more!”
+          </article>
+          <div className="button-container">
+            <ClickToHire toggleForm={toggleForm} />
           </div>
         </div>
       </div>

@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap");
-@import "./assets/scss/abstracts/animation.scss";
 @import "./assets/scss/abstracts/colors.scss";
 @import "./assets/scss/abstracts/sizes.scss";
 
 body {
   margin: 0;
   padding: 0px 0 0 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //   sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $primary-color !important;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -51,7 +52,24 @@ code {
 .clickable {
   cursor: pointer;
 }
+.click-to-hire {
+  padding: 10px 20px 10px 20px !important;
+  width: fit-content !important;
+}
 
+.button-container {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100%;
+  max-width: 100%;
+}
+.btn-primary {
+  background: $accentColor !important;
+  color: white !important;
+  border: none !important;
+}
 .show-mobile {
   display: none !important;
 }
@@ -75,12 +93,30 @@ svg {
   font-size: $mobile-nav-size;
   border-radius: 35px !important;
 }
+.line-break {
+  margin-bottom: 30px;
+}
 
 @media only screen and (max-width: 1350px) {
   .main-area {
     padding: 0px 0px 70px 0px !important;
     align-items: center;
     z-index: 1;
+  }
+  .main-footer {
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: -70px;
+    justify-content: space-evenly;
+    gap: 10px;
+    height: min-content;
+    position: inline-block;
+    padding: 10px;
+    a {
+      padding: 10px !important;
+      color: white !important;
+    }
   }
   .click-to-hire {
     margin: 60px 0px;
@@ -91,8 +127,14 @@ svg {
   .show-mobile {
     display: block !important;
   }
+  article {
+    font-size: 1.1rem;
+  }
 }
 @media only screen and (min-width: 1350px) {
+  article {
+    font-size: 1.1rem;
+  }
   .click-to-hire {
     margin: 15px 0px;
   }

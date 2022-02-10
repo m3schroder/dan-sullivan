@@ -4,13 +4,15 @@
   article {
     margin-top: 20px;
   }
+
   //Small Screens
   @media only screen and (max-width: 1350px) {
     display: grid;
     justify-items: center;
     align-items: center;
     padding: 10px;
-    div {
+    margin-bottom: var(--nav-bar-height);
+    article {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -19,11 +21,14 @@
     img {
       width: 80%;
       border-radius: 15px;
-      box-shadow: $shadow;
+      box-shadow: $shadow-bottom;
     }
     .text-container {
       text-align: left;
       padding: 20px;
+      background-color: white;
+      box-shadow: $shadow-bottom;
+      border-radius: 10px;
       white-space: pre-wrap;
       h1 {
         color: $heading-color;
@@ -32,12 +37,11 @@
         font-weight: 600;
         margin-bottom: 15px;
       }
-      div {
-        font-size: $page-text;
-        color: $text-color;
-        line-height: 1.7em;
-        font-weight: 500;
-      }
+    }
+    article {
+      font-size: $page-text;
+      color: $text-color;
+      line-height: 1.7em;
     }
   }
 
@@ -46,7 +50,7 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    padding: 0px 20vw;
+    padding: 0px 15vw 5vh 15vw;
     div {
       display: flex;
       flex-direction: column;
@@ -62,20 +66,23 @@
       padding: 20px;
       display: flex;
       align-items: flex-start;
+      background-color: white;
+      box-shadow: $shadow-bottom;
+      border-radius: 10px;
       white-space: pre-wrap;
       h1 {
         text-align: start;
         color: $heading-color;
-        font-family: "Montserrat";
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-size: $page-heading;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
-      div {
+      article {
         font-size: $page-text;
         color: $text-color;
-        line-height: 2.3em;
-        font-weight: 500;
+        padding: 20px !important;
+        line-height: 1.8em;
       }
     }
   }

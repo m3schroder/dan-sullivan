@@ -1,9 +1,13 @@
-$lineColor: rgb(59, 89, 152);
+$lineColor: #1850c9;
+$accentColor: #1850c9;
 
+body {
+  background: rgba(200, 200, 200, 0.1) !important;
+}
 $mobile-font-color: rgba(0, 0, 0, 0.5);
 $desktop-font-color: rgba(0, 0, 0, 0.5);
 
-$shadow-bottom: 0px 1px 20px rgba(0, 0, 0, 0.2);
+$shadow-bottom: 5px 5px 20px rgba(0, 0, 0, 0.1);
 
 $primary-color: white;
 $secondary-color: white;

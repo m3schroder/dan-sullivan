@@ -1,18 +1,9 @@
 @import "../scss/abstracts/mixins.scss";
 #about {
   @include page-container;
-  grid-template-rows: min-content;
-  grid-template-areas: "two";
-  #one {
-    position: relative;
-    img {
-      position: relative;
-      right: 10vw;
-      height: 20vh;
-      width: 100vw;
-      object-fit: cover;
-    }
-  }
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 @media only screen and (min-width: 650px) and (max-width: 1350px) {

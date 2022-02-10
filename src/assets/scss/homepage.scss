@@ -4,29 +4,23 @@
 #home {
   @include page-container;
   grid-template-areas:
-    "two one"
-    "three four";
-
-  #two,
-  #one {
-    // background: dodgerblue !important;
-  }
-  #three,
-  #four {
-    // background: slateblue !important;
-  }
-  #one {
-    button {
-      width: fit-content;
-    }
-  }
+    "one two"
+    "four three";
+  gap: 30px;
 }
 #home > div {
   width: 100%;
   height: 100%;
-  padding: 50px 40px;
 }
-
+.callus {
+  display: flex;
+  flex-direction: row !important;
+  margin-top: 25px;
+  strong {
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+}
 @media only screen and (max-width: 1350px) {
   #home {
     grid-template-areas:
@@ -34,22 +28,20 @@
       "two"
       "three"
       "four";
-    #two {
-      padding: 0px;
+    .callus {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 25px;
     }
+    #one {
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    #two,
     #four {
-      padding: 0px;
-    }
-  }
-  #home-banner {
-    position: relative !important;
-    top: 0;
-    font-size: 1.3rem;
-    color: var(--banner-dark);
-    background-color: var(--secondary-color);
-    img {
-      height: calc(var(--nav-bar-height) * 0.75);
-      margin-right: 10px;
+      display: flex;
+      justify-content: center;
     }
   }
 }

@@ -45,7 +45,7 @@ class App extends Component {
       //   text: "Commercial Carpets",
       //   submenu: true,
       // },
-      { path: "/about", text: "About Us" },
+      { path: "/about", text: "About" },
       { path: "/gallery", text: "Gallery" },
       { path: "/services", text: "Services" },
     ];
